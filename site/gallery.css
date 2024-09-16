@@ -15,8 +15,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-color: pink;
 }
 
@@ -66,10 +64,12 @@ h1 {
     transform: scaleX(1);
     right: 0px;
   }
+
   50% {
     transform: scaleX(-1);
     right: calc(100vw - 6em);
   }
+
   100% {
     transform: scaleX(1);
     right: 0px;
@@ -88,102 +88,127 @@ h1 {
     top: 76vh;
     left: 80vw;
   }
+
   4% {
     top: 62vh;
     left: 95vw;
   }
+
   8% {
     top: 89vh;
     left: 4vw;
   }
+
   12% {
     top: 95vh;
     left: 27vw;
   }
+
   16% {
     top: 27vh;
     left: 83vw;
   }
+
   20% {
     top: 51vh;
     left: 66vw;
   }
+
   24% {
     top: 71vh;
     left: 58vw;
   }
+
   28% {
     top: 61vh;
     left: 59vw;
   }
+
   32% {
     top: 79vh;
     left: 55vw;
   }
+
   36% {
     top: 91vh;
     left: 48vw;
   }
+
   40% {
     top: 70vh;
     left: 59vw;
   }
+
   44% {
     top: 74vh;
     left: 30vw;
   }
+
   48% {
     top: 79vh;
     left: 81vw;
   }
+
   52% {
     top: 90vh;
     left: 21vw;
   }
+
   56% {
     top: 32vh;
     left: 51vw;
   }
+
   60% {
     top: 46vh;
     left: 91vw;
   }
+
   64% {
     top: 48vh;
     left: 31vw;
   }
+
   68% {
     top: 7vh;
     left: 62vw;
   }
+
   72% {
     top: 32vh;
     left: 6vw;
   }
+
   76% {
     top: 53vh;
     left: 25vw;
   }
+
   80% {
     top: 71vh;
     left: 58vw;
   }
+
   84% {
     top: 21vh;
     left: 90vw;
   }
+
   88% {
     top: 3vh;
     left: 20vw;
   }
+
   92% {
     top: 25vh;
     left: 9vw;
   }
+
   96% {
     top: 49vh;
     left: 78vw;
   }
+
   100% {
     top: 76vh;
     left: 80vw;
@@ -194,15 +219,19 @@ h1 {
   from {
     color: #6666ff;
   }
+
   10% {
     color: #0099ff;
   }
+
   50% {
     color: #00ff00;
   }
+
   75% {
     color: #ff3399;
   }
+
   100% {
     color: #6666ff;
   }
@@ -212,9 +241,11 @@ h1 {
   from {
     transform: scaleX(1);
   }
+
   50% {
     transform: scaleX(-1);
   }
+
   100% {
     transform: scaleX(1);
   }
@@ -225,7 +256,7 @@ h1 {
   grid-template-columns: repeat(4, auto);
 }
 
-.pengers > img {
+.pengers>img {
   width: 256px;
 }
 
