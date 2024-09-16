@@ -53,7 +53,7 @@ h1 {
 }
 
 .smoothsliding {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   right: 0px;
   width: 4em;
@@ -72,6 +72,120 @@ h1 {
   100% {
     transform: scaleX(1);
     right: 0px;
+  }
+}
+
+.jetger {
+  position: fixed;
+  width: 4em;
+  z-index: 100;
+  animation: Jetger 50s infinite;
+}
+
+@keyframes Jetger {
+  from {
+    top: 76vh;
+    left: 80vw;
+  }
+  4% {
+    top: 62vh;
+    left: 95vw;
+  }
+  8% {
+    top: 89vh;
+    left: 4vw;
+  }
+  12% {
+    top: 95vh;
+    left: 27vw;
+  }
+  16% {
+    top: 27vh;
+    left: 83vw;
+  }
+  20% {
+    top: 51vh;
+    left: 66vw;
+  }
+  24% {
+    top: 71vh;
+    left: 58vw;
+  }
+  28% {
+    top: 61vh;
+    left: 59vw;
+  }
+  32% {
+    top: 79vh;
+    left: 55vw;
+  }
+  36% {
+    top: 91vh;
+    left: 48vw;
+  }
+  40% {
+    top: 70vh;
+    left: 59vw;
+  }
+  44% {
+    top: 74vh;
+    left: 30vw;
+  }
+  48% {
+    top: 79vh;
+    left: 81vw;
+  }
+  52% {
+    top: 90vh;
+    left: 21vw;
+  }
+  56% {
+    top: 32vh;
+    left: 51vw;
+  }
+  60% {
+    top: 46vh;
+    left: 91vw;
+  }
+  64% {
+    top: 48vh;
+    left: 31vw;
+  }
+  68% {
+    top: 7vh;
+    left: 62vw;
+  }
+  72% {
+    top: 32vh;
+    left: 6vw;
+  }
+  76% {
+    top: 53vh;
+    left: 25vw;
+  }
+  80% {
+    top: 71vh;
+    left: 58vw;
+  }
+  84% {
+    top: 21vh;
+    left: 90vw;
+  }
+  88% {
+    top: 3vh;
+    left: 20vw;
+  }
+  92% {
+    top: 25vh;
+    left: 9vw;
+  }
+  96% {
+    top: 49vh;
+    left: 78vw;
+  }
+  100% {
+    top: 76vh;
+    left: 80vw;
   }
 }
 
