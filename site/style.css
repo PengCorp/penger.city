@@ -7,6 +7,7 @@ body {
   background-color: white;
   color: black;
   font-family: Verdana;
+  overflow-x: hidden;
 }
 
 body {
