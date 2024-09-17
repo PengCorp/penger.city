@@ -1,0 +1,1 @@
+python3 ./scripts/gallery_make.py

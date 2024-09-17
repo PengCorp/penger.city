@@ -7,17 +7,28 @@ body {
     background-color: white;
     color: black;
     font-family: Verdana;
-    overflow-x: hidden;
 }
 
 body {
-    width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: pink;
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    background-color: #f7a6ff;
+    font-size: 24px;
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+    padding: 16px;
 }
 
 .welcome,
@@ -61,29 +72,46 @@ h1 {
     animation: Sliding 4s infinite;
 }
 
-@keyframes Sliding {
-    from {
-        transform: scaleX(1);
-        right: 0px;
-    }
-
-    50% {
-        transform: scaleX(-1);
-        right: calc(100vw - 6em);
-    }
-
-    100% {
-        transform: scaleX(1);
-        right: 0px;
-    }
-}
-
 .jetger {
     position: fixed;
     width: 4em;
     z-index: 100;
     animation: Jetger 50s infinite;
 }
+
+.pengers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pengers>div {
+    width: 25%;
+    max-width: 250px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pengers img {
+    max-width: 100%;
+}
+
+.temple {
+    border: 3px dashed #73cedd;
+    margin-bottom: 32px;
+    padding: 64px;
+    background-color: #1c1c19;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animations */
+
+
 
 @keyframes Jetger {
     from {
@@ -253,21 +281,19 @@ h1 {
     }
 }
 
-.pengers {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-}
+@keyframes Sliding {
+    from {
+        transform: scaleX(1);
+        right: 0px;
+    }
 
-.pengers>img {
-    width: 256px;
-}
+    50% {
+        transform: scaleX(-1);
+        right: calc(100vw - 6em);
+    }
 
-.temple {
-    border: 3px dashed #73cedd;
-    margin-bottom: 32px;
-    padding: 64px;
-    background-color: #1c1c19;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    100% {
+        transform: scaleX(1);
+        right: 0px;
+    }
 }
