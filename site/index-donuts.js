@@ -77,7 +77,7 @@ $(document).ready(function () {
     window.requestAnimationFrame(animateDonuts);
 
     setInterval(() => {
-        if (getNumberBetween(1, 100) > 85) {
+        if (getNumberBetween(1, 100) > 95) {
             donutsToAppend.push(makeNewDonut());
         }
     }, 50);
