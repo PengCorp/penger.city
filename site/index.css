@@ -43,7 +43,8 @@ body {
     animation: NavSpin 1s infinite linear;
 }
 
-.nav a:link, .nav a:visited {
+.nav a:link,
+.nav a:visited {
     color: white;
     text-decoration: none;
 }
@@ -62,8 +63,6 @@ body {
     position: absolute;
     left: 16px;
     top: 16px;
-
-    animation: DonutFall 2s infinite ease-in;
 }
 
 .welcome,
@@ -353,19 +352,5 @@ h1 {
 
     100% {
         transform: scaleX(1);
-    }
-}
-
-@keyframes DonutFall {
-    from {
-        left: 16px;
-        top: 16px;
-        transform: rotate(0deg);
-    }
-
-    100% {
-        left: 128px;
-        top: 110vh;
-        transform: rotate(180deg);
     }
 }
