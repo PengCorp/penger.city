@@ -29,6 +29,41 @@ body {
     justify-content: center;
     gap: 32px;
     padding: 16px;
+    margin-top: 0;
+
+    border: dotted white 6px;
+    font-weight: 900;
+}
+
+.nav li.gallery {
+    list-style-image: url("/pengers/pixel/paintger_small.png");
+}
+
+.nav li:hover {
+    animation: NavSpin 1s infinite linear;
+}
+
+.nav a:link, .nav a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.cookger {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    left: 8px;
+    top: 8px;
+
+    animation: CookgerSpin 2s infinite linear;
+}
+
+.donut {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+
+    animation: DonutFall 2s infinite ease-in;
 }
 
 .welcome,
@@ -110,8 +145,6 @@ h1 {
 }
 
 /* Animations */
-
-
 
 @keyframes Jetger {
     from {
@@ -295,5 +328,44 @@ h1 {
     100% {
         transform: scaleX(1);
         right: 0px;
+    }
+}
+
+@keyframes NavSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+
+@keyframes CookgerSpin {
+    from {
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(-1);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes DonutFall {
+    from {
+        left: 16px;
+        top: 16px;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        left: 128px;
+        top: 110vh;
+        transform: rotate(180deg);
     }
 }
