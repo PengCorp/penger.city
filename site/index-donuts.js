@@ -27,7 +27,7 @@ function makeNewDonut() {
     ];
 
     const element = $('<img>', {
-        src: foods[getNumberBetweenInt(0, foods.length -1)],
+        src: foods[getNumberBetweenInt(0, foods.length - 1)],
         class: 'donut'
     }).css({
         left: donut.x,
@@ -40,6 +40,11 @@ function makeNewDonut() {
 }
 
 $(document).ready(function () {
+    let isHidden = document.hidden;
+    document.addEventListener("visibilitychange", () => {
+        isHidden = document.hidden;
+    });
+
     let donuts = [
         makeNewDonut(),
     ];
@@ -89,6 +94,10 @@ $(document).ready(function () {
     window.requestAnimationFrame(animateDonuts);
 
     setInterval(() => {
+        if (donutsToAppend.length >= 5) {
+            return;
+        }
+
         if (getNumberBetween(1, 100) > 95) {
             donutsToAppend.push(makeNewDonut());
         }
