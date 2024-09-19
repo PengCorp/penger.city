@@ -1,10 +1,14 @@
 const minSpin = 180;
 const maxSpin = 360;
-const donutCutoff = 256;
 
 function getNumberBetween(min, max) {
     return (Math.random() * (max - min) + min).toFixed(2);
 }
+
+function getNumberBetweenInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 
 function makeNewDonut() {
     const donut = {
@@ -14,8 +18,16 @@ function makeNewDonut() {
         sx: getNumberBetween(16, 64),
         sy: -getNumberBetween(32, 128),
     };
+
+    const foods = [
+        '/pengers/donut.png',
+        '/pengers/burger.png',
+        '/pengers/icecream.png',
+        '/pengers/kurason.png'
+    ];
+
     const element = $('<img>', {
-        src: '/pengers/donut.png',
+        src: foods[getNumberBetweenInt(0, foods.length -1)],
         class: 'donut'
     }).css({
         left: donut.x,
@@ -58,7 +70,7 @@ $(document).ready(function () {
             donut.x += donut.sx * dt;
             donut.y += donut.sy * dt;
 
-            if (donut.y > donutCutoff) {
+            if (donut.y > Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)) {
                 donut.$ref.remove();
                 newDonuts = newDonuts.filter((d) => d !== donut);
             }
