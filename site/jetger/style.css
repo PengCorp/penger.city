@@ -1,11 +1,9 @@
-@font-face
-{
+@font-face {
     font-family: "Comic Sans";
-    src: url("media/Comic_Sans_MS.ttf");
+    src: url("/fonts/Comic_Sans_MS.ttf");
 }
 
-body
-{
+body {
     background: url("images/bg.png");
     color: white;
     font-family: "Comic Sans";
@@ -13,21 +11,18 @@ body
     padding-right: 50px;
 }
 
-a
-{
+a {
     color: white;
 }
 
-#home
-{
+#home {
     font-size: 1.5em;
     position: absolute;
     background: black;
     padding: 5px;
 }
 
-#top
-{
+#top {
     font-size: 1.5em;
     position: absolute;
     right: 40px;
@@ -35,21 +30,19 @@ a
     padding: 5px;
 }
 
-#jetger
-{
+#jetger {
     position: fixed;
     top: 100px;
     left: 50px;
 }
 
-header, main
-{
+header,
+main {
     margin: auto;
     max-width: 900px;
 }
 
-header
-{
+header {
     text-align: center;
     margin-bottom: 100px;
     font-size: 1.4em;
@@ -59,30 +52,25 @@ header
     padding-right: 30px;
 }
 
-header h1
-{
+header h1 {
     text-shadow: 2px 0px 0px black, -2px 0px 0px black, 0px 2px 0px black, 0px -2px 0px black;
 }
 
-strong
-{
+strong {
     font-size: 1.1em;
     color: rgb(255, 41, 212);
 }
 
-main a
-{
+main a {
     color: cyan;
 }
 
-audio
-{
+audio {
     display: block;
     margin: auto;
 }
 
-section
-{
+section {
     border: 7px dashed white;
     background: black;
     padding: 2em;
@@ -93,13 +81,11 @@ section
     font-size: 1.4em;
 }
 
-section p:first-of-type
-{
+section p:first-of-type {
     margin-top: 0px;
 }
 
-section h1
-{
+section h1 {
     font-size: 40px;
     position: absolute;
     top: -1.6em;
@@ -111,18 +97,15 @@ section h1
     line-height: 1em;
 }
 
-section h2
-{
+section h2 {
     margin-bottom: 10px;
 }
 
-section ul
-{
+section ul {
     margin-top: 0px;
 }
 
-figure
-{
+figure {
     display: inline-block;
     max-width: 150px;
     font-size: 0.7em;
@@ -134,20 +117,17 @@ figure
     text-decoration: none;
 }
 
-figure:hover
-{
+figure:hover {
     border-color: cyan;
     color: cyan;
 }
 
-figure img
-{
+figure img {
     height: 200px;
     width: auto;
 }
 
-img.penger
-{
+img.penger {
     height: 128px;
     width: auto;
 }
