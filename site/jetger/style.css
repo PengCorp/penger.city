@@ -1,0 +1,147 @@
+body
+{
+    background: url("images/bg.png");
+    color: white;
+    font-family: cursive;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+a
+{
+    color: white;
+}
+
+#home
+{
+    font-size: 1.5em;
+    position: absolute;
+    background: black;
+    padding: 5px;
+}
+
+#top
+{
+    font-size: 1.5em;
+    position: absolute;
+    right: 40px;
+    background: black;
+    padding: 5px;
+}
+
+#jetger
+{
+    position: fixed;
+    top: 100px;
+    left: 50px;
+}
+
+header, main
+{
+    margin: auto;
+    max-width: 900px;
+}
+
+header
+{
+    text-align: center;
+    margin-bottom: 100px;
+    font-size: 1.4em;
+    background: rgba(0, 0, 0, 0.5);
+    width: fit-content;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+header h1
+{
+    text-shadow: 2px 0px 0px black, -2px 0px 0px black, 0px 2px 0px black, 0px -2px 0px black;
+}
+
+strong
+{
+    font-size: 1.1em;
+    color: rgb(255, 41, 212);
+}
+
+main a
+{
+    color: cyan;
+}
+
+audio
+{
+    display: block;
+    margin: auto;
+}
+
+section
+{
+    border: 7px dashed white;
+    background: black;
+    padding: 2em;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 100px;
+    position: relative;
+    font-size: 1.4em;
+}
+
+section p:first-of-type
+{
+    margin-top: 0px;
+}
+
+section h1
+{
+    font-size: 40px;
+    position: absolute;
+    top: -1.6em;
+    left: 0.7em;
+    background: black;
+    color: yellow;
+
+    padding: 5px;
+    line-height: 1em;
+}
+
+section h2
+{
+    margin-bottom: 10px;
+}
+
+section ul
+{
+    margin-top: 0px;
+}
+
+figure
+{
+    display: inline-block;
+    max-width: 150px;
+    font-size: 0.7em;
+    text-align: center;
+    border: 2px dashed white;
+    padding: 10px;
+    transform: rotate(-1deg);
+    color: white;
+    text-decoration: none;
+}
+
+figure:hover
+{
+    border-color: cyan;
+    color: cyan;
+}
+
+figure img
+{
+    height: 200px;
+    width: auto;
+}
+
+img.penger
+{
+    height: 128px;
+    width: auto;
+}
