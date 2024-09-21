@@ -130,4 +130,5 @@ figure img {
 img.penger {
     height: 128px;
     width: auto;
+    image-rendering: pixelated;
 }
