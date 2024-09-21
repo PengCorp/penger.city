@@ -1,8 +1,14 @@
+@font-face
+{
+    font-family: "Comic Sans";
+    src: url("media/Comic_Sans_MS.ttf");
+}
+
 body
 {
     background: url("images/bg.png");
     color: white;
-    font-family: cursive;
+    font-family: "Comic Sans";
     padding-left: 50px;
     padding-right: 50px;
 }
