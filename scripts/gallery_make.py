@@ -31,7 +31,7 @@ template = env.get_template('./scripts/gallery_template.html')
 
 # Data to pass to the template
 data = {
-    'title': 'My Image Gallery',
+    'title': 'Gallery of Penger',
     'images_with_dirs': images_with_dirs
 }
 
@@ -39,7 +39,7 @@ data = {
 output_html = template.render(data)
 
 # Write the output to a file
-with open('./site/gallery.html', 'w') as file:
+with open('./site/gallery/index.html', 'w') as file:
     file.write(output_html)
 
 print("HTML file created successfully with images!")
