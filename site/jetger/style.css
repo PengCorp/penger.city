@@ -4,6 +4,7 @@ body {
     font-family: "Comic Sans";
     padding-left: 50px;
     padding-right: 50px;
+    position: relative;
 }
 
 a {
@@ -15,11 +16,14 @@ a {
     position: absolute;
     background: black;
     padding: 5px;
+    top: 10px;
+    left: 10px;
 }
 
 #top {
     font-size: 1.5em;
     position: absolute;
+    bottom: 10px;
     right: 40px;
     background: black;
     padding: 5px;
