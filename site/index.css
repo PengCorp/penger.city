@@ -1,3 +1,7 @@
+body {
+    font-family: "Comic Sans", sans-serif;
+}
+
 .cookger {
     width: 64px;
     height: 64px;
@@ -16,6 +20,7 @@
 
 .welcome,
 .block2 {
+    font-family: "Comic Sans", sans-serif;
     color: white;
     font-weight: 800;
     font-style: italic;
