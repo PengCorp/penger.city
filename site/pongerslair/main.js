@@ -33,39 +33,6 @@ function tick()
         dy *= -1;
     }
 
-    if (x < -ballWidth || x > field.clientWidth)
-    {
-        dx = 0;
-        dy = 0;
-        x = field.clientWidth / 2 - ballWidth / 2;
-        y = field.clientHeight / 2 - ballWidth / 2;
-        message.innerText = "YOU SCORED " + score;
-        score = 0;
-        canBeCaught = true;
-        servable = true;
-        
-        let fade = setInterval(function()
-            {
-                if (song.volume >= 0.2)
-                {
-                    song.volume -= 0.2;
-                }
-                else
-                {
-                    song.volume = 0;
-                }
-
-
-                if (song.volume <= 0)
-                {
-                    song.pause();                                        
-                    clearInterval(fade);
-                }
-            },
-            100
-        );
-    }
-
     if (x < penger.offsetLeft + paddleWidth - 1.5 * ballWidth && dx < 0)
     {
         canBeCaught = false;
@@ -103,18 +70,58 @@ function tick()
         }
     }
 
+    if (x < -ballWidth || x > field.clientWidth)
+    {
+        dx = 0;
+        dy = 0;
+        x = field.clientWidth / 2 - ballWidth / 2;
+        y = field.clientHeight / 2 - ballWidth / 2;
+        message.innerText = "YOU SCORED " + score;
+        score = 0;
+        canBeCaught = true;
+        servable = true;
+        
+        let fade = setInterval(function()
+            {
+                if (song.volume >= 0.2)
+                {
+                    song.volume -= 0.2;
+                }
+                else
+                {
+                    song.volume = 0;
+                }
+
+
+                if (song.volume <= 0)
+                {
+                    song.pause();                                        
+                    clearInterval(fade);
+                }
+            },
+            100
+        );
+    }
+
     if (ball.offsetLeft > field.clientWidth / 2 && dx > 0)
     {
         let pongerY = ponger.offsetTop;
 
-        if (ball.offsetTop + ballWidth / 2 > pongerY + paddleHeight / 2)
+        if (score < 40)
         {
-            pongerY += 2 * Math.abs(dy);
-        }
+            if (ball.offsetTop + ballWidth / 2 > pongerY + paddleHeight / 2)
+            {
+                pongerY += 2 * Math.abs(dy);
+            }
 
-        if (ball.offsetTop + ballWidth / 2 < pongerY + paddleHeight / 2)
+            if (ball.offsetTop + ballWidth / 2 < pongerY + paddleHeight / 2)
+            {
+                pongerY -= 2 * Math.abs(dy);
+            }
+        }
+        else
         {
-            pongerY -= 2 * Math.abs(dy);
+            pongerY = y + ballWidth / 2 - paddleHeight / 2;
         }
 
         ponger.style.top = pongerY + "px";
