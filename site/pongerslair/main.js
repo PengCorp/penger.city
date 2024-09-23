@@ -1,8 +1,13 @@
 function onClick()
 {
-    dx = -10;
-    dy = -10;
-    message.innerText = "0";
+    if (servable)
+    {
+        dx = -10;
+        dy = -10;
+        message.innerText = "0";    
+    }
+    
+    servable = false;
 }
 
 function onMove(event)
@@ -36,9 +41,12 @@ function tick()
         message.innerText = "YOU SCORED " + score;
         score = 0;
         canBeCaught = true;
+        servable = true;
+        song.pause();
+        song.fastSeek(0);
     }
 
-    if (x < penger.offsetLeft + paddleWidth - ballWidth && dx < 0)
+    if (x < penger.offsetLeft + paddleWidth - 1.5 * ballWidth && dx < 0)
     {
         canBeCaught = false;
     }
@@ -50,6 +58,11 @@ function tick()
             dx *= -1;
             score += 1;
             message.innerText = score;
+
+            if (score >= 32)
+            {
+                song.play();
+            }
         }
     }
 
@@ -90,6 +103,7 @@ let dx = 0;
 let dy = 0;
 
 let score = 0;
+let servable = true;
 
 let ballWidth = ball.clientWidth;
 let paddleHeight = penger.clientHeight;
