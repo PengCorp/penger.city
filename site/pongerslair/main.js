@@ -95,7 +95,7 @@ let ballWidth = ball.clientWidth;
 let paddleHeight = penger.clientHeight;
 let paddleWidth = penger.clientWidth;
 
-const multiplier = Math.pow(2, 1/25);
+const multiplier = Math.pow(2, 1/30);
 
 setInterval(tick, 1000 / 60);
 document.addEventListener("mousemove", onMove);
