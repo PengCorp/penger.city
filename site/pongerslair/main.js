@@ -1,7 +1,7 @@
 function onClick()
 {
-    dx = -6;
-    dy = -6;
+    dx = -10;
+    dy = -10;
     message.innerText = "0";
 }
 
@@ -95,7 +95,7 @@ let ballWidth = ball.clientWidth;
 let paddleHeight = penger.clientHeight;
 let paddleWidth = penger.clientWidth;
 
-const multiplier = Math.pow(2, 1/8);
+const multiplier = Math.pow(2, 1/25);
 
 setInterval(tick, 1000 / 60);
 document.addEventListener("mousemove", onMove);
