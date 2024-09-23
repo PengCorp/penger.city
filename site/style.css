@@ -49,9 +49,7 @@ h1 {
 }
 
 .nav li {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    list-style: none;
     gap: 16px;
 }
 
@@ -59,7 +57,11 @@ h1 {
     width: 32px;
 }
 
-.nav li:hover {
+.nav a {
+    display: flex; /* required for the spinning to work?? */
+}
+
+.nav a:hover span {
     animation: NavSpin 1s infinite linear;
 }
 
