@@ -4,9 +4,10 @@ function onClick()
     {
         dx = -10;
         dy = -10;
-        message.innerText = "0";    
+        message.innerText = "0";
+        song.fastSeek(0);
     }
-    
+
     servable = false;
 }
 
@@ -42,8 +43,27 @@ function tick()
         score = 0;
         canBeCaught = true;
         servable = true;
-        song.pause();
-        song.fastSeek(0);
+        
+        let fade = setInterval(function()
+            {
+                if (song.volume >= 0.2)
+                {
+                    song.volume -= 0.2;
+                }
+                else
+                {
+                    song.volume = 0;
+                }
+
+
+                if (song.volume <= 0)
+                {
+                    song.pause();                                        
+                    clearInterval(fade);
+                }
+            },
+            100
+        );
     }
 
     if (x < penger.offsetLeft + paddleWidth - 1.5 * ballWidth && dx < 0)
@@ -59,8 +79,9 @@ function tick()
             score += 1;
             message.innerText = score;
 
-            if (score >= 32)
+            if (score >= 0)
             {
+                song.volume = 1;
                 song.play();
             }
         }
@@ -70,7 +91,13 @@ function tick()
     {
         if (y > ponger.offsetTop - ballWidth && y < ponger.offsetTop + paddleHeight)
         {
-            dx *= -1;            
+            dx *= -1;
+            
+            if (Math.random() > 0.5)
+            {
+                dy *= -1;
+            }
+
             dx *= multiplier;
             dy *= multiplier;
         }
