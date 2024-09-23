@@ -79,7 +79,7 @@ function tick()
             score += 1;
             message.innerText = score;
 
-            if (score >= 0)
+            if (score >= 29)
             {
                 song.volume = 1;
                 song.play();
