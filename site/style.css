@@ -71,6 +71,13 @@ h1 {
     text-decoration: none;
 }
 
+a.discord {
+    background-image: url("/pengers/Disger.png");
+    background-size: 32px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+
 @keyframes colorRotate {
     from {
         color: #6666ff;
