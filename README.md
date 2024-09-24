@@ -2,14 +2,27 @@
 
 ## Development
 
-### Serving
+### step 1: bootstrap the build system
+```bash
+cc -o scm build_tools/scheme.c -lm
+```
+SHOULD theoretically maybe work on windows??? (i tried)
 
-Use `serve.sh` to serve site locally on `localhost:8000`. This is needed for absolute paths in code to work.
+### step 2: run the build system
+on a real OS:
+```bash
+# exmpales
+./build.scm help
+./build.scm gallery
+./build.scm all
+./build.scm serve
+```
 
-### Pushing
+on windows:
+```cmd
+scm -1 build.scm help
+```
+
+## Pushing
 
 Uploads site files to Neocities. May ask for login that is then remembered.
-
-### Test commit
-
-lol
