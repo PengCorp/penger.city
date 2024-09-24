@@ -20,4 +20,5 @@ body {
 
 .penger>a>img {
     width: 64px;
+    image-rendering: pixelated;
 }
