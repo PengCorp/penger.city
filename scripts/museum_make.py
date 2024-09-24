@@ -14,22 +14,22 @@ def collect_images_with_resize(directory):
         for image_path in glob.glob(os.path.join(directory, ext)):
             image_info = {"original": replace_path_with + image_path.replace(remove_path, ''), "resized": None}
             
-            if image_path.find('.gif') == -1:
-                try:
-                    with Image.open(image_path) as img:
-                        width, height = img.size
+            # if image_path.find('.gif') == -1:
+            #     try:
+            #         with Image.open(image_path) as img:
+            #             width, height = img.size
                         
-                        if width < 64 or height < 64:
-                            base_name, ext = os.path.splitext(image_path)
-                            resized_image_path = f"{base_name}_8x{ext}"
+            #             if width < 64 or height < 64:
+            #                 base_name, ext = os.path.splitext(image_path)
+            #                 resized_image_path = f"{base_name}_8x{ext}"
                             
-                            resized_img = img.resize((width * 8, height * 8), Image.NEAREST)
+            #                 resized_img = img.resize((width * 8, height * 8), Image.NEAREST)
                             
-                            resized_img.save(resized_image_path)
+            #                 resized_img.save(resized_image_path)
                             
-                            image_info["resized"] = replace_path_with + resized_image_path.replace(remove_path, '')
-                except Exception as e:
-                    print(f"Error processing image {image_path}: {e}")
+            #                 image_info["resized"] = replace_path_with + resized_image_path.replace(remove_path, '')
+            #     except Exception as e:
+            #         print(f"Error processing image {image_path}: {e}")
             
             image_files.append(image_info)
     
