@@ -18,6 +18,19 @@ body
     background: url("curtain.png");
 }
 
+header
+{
+    position: absolute;
+    font-family: serif;
+}
+
+header a
+{
+    color: white;
+    font-size: 20px;
+    background: black;
+}
+
 #monitor
 {
     margin: auto;
