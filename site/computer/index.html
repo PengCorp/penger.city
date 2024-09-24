@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PengPuter Z-550</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="pengos.js" defer></script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div id="monitor">
+        <div id="screen">
+            <div id="screenContents">
+            </div>
+        </div>
+        <div id="controls">
+            <img src="logo.png" />
+        </div>
+    </div>
+</body>
+<template name="prompt" rooted>
+    <p>A:/<span id="input"></span><span id="cursor" class="blink">_</span></p>
+</template>
+</html>
