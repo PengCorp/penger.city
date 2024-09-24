@@ -148,6 +148,25 @@ function startup()
     return "PengOS 2.1\n(c) Copyright PengCorp 1985-2024"
 }
 
+function tab(input)
+{
+    let tokens = input.split(" ");
+    if (!tokens) return "";
+    let token = tokens[tokens.length - 1];
+
+    let dir = path[path.length - 1];    
+    for (let name of Object.keys(dir))
+    {
+        let prefix = name.slice(0, token.length);
+        if (prefix === token)
+        {
+            return name.slice(token.length);
+        }
+    }
+
+    return "";
+}
+
 function submit(input)
 {
     let tokens = input.split(" ");

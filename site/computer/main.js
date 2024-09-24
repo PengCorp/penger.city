@@ -43,6 +43,13 @@
             let output = submit(input.innerText);
             addPrompt(output);
         }
+        else if (event.code == "Tab")
+        {
+            let completion = tab(input.innerText);
+            input.innerText += completion;
+
+            event.preventDefault();
+        }
         else if (event.key.length == 1 && !modifier)
         {
             input.innerText += event.key;
