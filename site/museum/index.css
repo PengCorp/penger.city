@@ -18,10 +18,6 @@ body {
     width: 64px;
 }
 
-.penger>img {
+.penger>a>img {
     width: 64px;
-}
-
-.pixel>img {
-    image-rendering: pixelated;
 }
