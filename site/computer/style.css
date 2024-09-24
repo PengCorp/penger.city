@@ -86,6 +86,7 @@ header a {
 #screen p {
     margin-top: 0px;
     line-break: anywhere;
+    white-space: pre;
 }
 
 #screen::before {

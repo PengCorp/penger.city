@@ -13,9 +13,9 @@ const commands = [
         const helpText = {
             "help": "List available commands",
             "look": "Display contents of current directory",
-            "go": "Navigate directories",
-            "up": "Navigate to parent directory",
-            "run": "Execute program",
+            "go": "  Navigate directories",
+            "up": "  Navigate to parent directory",
+            "run": " Execute program",
             "open": "Display file"
         };
 
@@ -23,7 +23,7 @@ const commands = [
         {
             if (helpText[command.name])
             {
-                print(command.name + ": " + helpText[command.name]);
+                print(command.name + "   " + helpText[command.name]);
             }
             else
             {
@@ -41,7 +41,14 @@ const commands = [
         
         for (let name of Object.keys(dir))
         {
-            print(name)
+            if (isDirectory(dir[name]))
+            {
+                print(name + "/");
+            }
+            else
+            {
+                print(name);
+            }
         }
     },
 
@@ -176,15 +183,19 @@ function submit(input)
     let command = tokens[0];
     let args = tokens.slice(1);
 
+    stdout = "";
+
     for (let f of commands)
     {
         if (f.name == command || command == f.name[0])
         {
-            stdout = "";
             f(...args);
             return stdout;
         }
     }
 
-    return "Unknown command: " + command;
+    print("Unknown command: " + command);
+    print("Try \"help\" or \"h\" to see available commands")
+
+    return stdout;
 }
