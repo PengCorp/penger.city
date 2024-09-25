@@ -62,6 +62,10 @@ $(document).ready(function () {
 
     let jetger_spin_timer = 0;
 
+    let donut_odds = 95;
+
+    let donut_frenzy_timer = 0;
+
     let prevTime = 0;
     const animateDonuts = (timeMs) => {
         const time = timeMs / 1000;
@@ -73,6 +77,8 @@ $(document).ready(function () {
         }
 
         const dt = time - prevTime;
+
+        donut_frenzy_timer += dt;
 
         let newDonuts = donuts;
 
@@ -100,7 +106,6 @@ $(document).ready(function () {
             }
 
             if (rectangleVsRectangle(jetger_hitbox, donut_rectangle)) {
-                console.log("Jetger hit!");
                 jetger_spin_timer = 0;
                 jetger.style = 'animation: Jetger 70s infinite, Spinny 1s infinite linear';
             }
@@ -128,7 +133,16 @@ $(document).ready(function () {
             return;
         }
 
-        if (getNumberBetween(1, 100) > 95) {
+        const chance = getNumberBetween(1, 100);
+
+        if (donut_frenzy_timer > 5) {
+            donut_odds = 95;
+        }
+
+        if (chance > 99.9) {
+            donut_frenzy_timer = 0;
+            donut_odds = 30;
+        } else if (chance > donut_odds) {
             donutsToAppend.push(makeNewDonut());
         }
     }, 50);
