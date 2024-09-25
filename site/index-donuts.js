@@ -15,8 +15,8 @@ function makeNewDonut() {
         spin: `${getNumberBetween(minSpin, maxSpin)}deg`,
         x: 32,
         y: 32,
-        sx: $("jetger").position().left,
-        sy: -$("jetger").position().top,
+        sx: $(".jetger")[0].getBoundingClientRect().left,
+        sy: $(".jetger")[0].getBoundingClientRect().top,
     };
 
     const foods = [
