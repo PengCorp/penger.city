@@ -140,8 +140,8 @@ let score = 0;
 let servable = true;
 
 let ballWidth = ball.clientWidth;
-let paddleHeight = penger.clientHeight;
-let paddleWidth = penger.clientWidth;
+let paddleHeight = 128;
+let paddleWidth = 128;
 
 const multiplier = Math.pow(2, 1/30);
 
