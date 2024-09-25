@@ -40,6 +40,7 @@ const commands = [
             "look": "Display contents of current directory",
             "go": "  Navigate directories",
             "up": "  Navigate to parent directory",
+            "run": " Execute program",
             "open": "Display file",
             "take": "Add a program to the command list",
             "drop": "Remove a program from the command list"
@@ -119,6 +120,25 @@ const commands = [
         }
 
         print("Went up to " + pathNames.join("/"));
+    },
+
+    function run(name)
+    {
+        let dir = path[path.length - 1];
+        let program = dir[name];
+
+        if (isProgram(program))
+        {
+            programs[name]();
+        }
+        else if (program === undefined)
+        {
+            print("Does not exist");
+        }
+        else
+        {
+            print("Not executable")
+        }
     },
 
     function open(name)
@@ -205,7 +225,7 @@ let stdout;
 
 function startup()
 {
-    return "PengOS 2.1\n(c) Copyright PengCorp 1985-2024"
+    return "PengOS 2.1\n(c) Copyright 1985 PengCorp"
 }
 
 function tab(input)
