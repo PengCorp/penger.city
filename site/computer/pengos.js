@@ -129,7 +129,7 @@ const commands = [
 
         if (isProgram(program))
         {
-            programs[name]();
+            programs[name.split(".")[0]]();
         }
         else if (program === undefined)
         {
