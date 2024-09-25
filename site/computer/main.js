@@ -92,4 +92,7 @@
     addPrompt(startup());
 
     addEventListener("keydown", onKey);
+
+    startupNoise.volume = 0.7;
+    startupNoise.play();
 })();
