@@ -39,6 +39,15 @@ function makeNewDonut() {
     return donut;
 }
 
+function rectangleVsRectangle(rec1, rec2) {
+    var collision = false;
+
+    if ((rec1.x < (rec2.x + rec2.width) && (rec1.x + rec1.width) > rec2.x) &&
+        (rec1.y < (rec2.y + rec2.height) && (rec1.y + rec1.height) > rec2.y)) collision = true;
+
+    return collision;
+}
+
 $(document).ready(function () {
     let isHidden = document.hidden;
     document.addEventListener("visibilitychange", () => {
@@ -50,6 +59,8 @@ $(document).ready(function () {
     ];
 
     let donutsToAppend = [];
+
+    let jetger_spin_timer = 0;
 
     let prevTime = 0;
     const animateDonuts = (timeMs) => {
@@ -65,6 +76,9 @@ $(document).ready(function () {
 
         let newDonuts = donuts;
 
+        const jetger = $(".jetger")[0];
+        const jetger_hitbox = jetger.getBoundingClientRect();
+
         for (donut of donuts) {
             donut.$ref.css({
                 left: donut.x,
@@ -74,6 +88,22 @@ $(document).ready(function () {
 
             donut.x += donut.sx * dt;
             donut.y += donut.sy * dt;
+
+            const donut_rectangle = {
+                x: donut.x, y: donut.y, width: 32, height: 32
+            };
+
+            jetger_spin_timer += dt;
+
+            if (jetger_spin_timer > 2) {
+                jetger.style = 'animation: Jetger 70s infinite';
+            }
+
+            if (rectangleVsRectangle(jetger_hitbox, donut_rectangle)) {
+                console.log("Jetger hit!");
+                jetger_spin_timer = 0;
+                jetger.style = 'animation: Jetger 70s infinite, Spinny 1s infinite linear';
+            }
 
             if (donut.y > Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)) {
                 donut.$ref.remove();
