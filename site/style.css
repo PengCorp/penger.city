@@ -75,9 +75,9 @@ h1 {
 
 a.discord {
     background-image: url("/pengers/Disger.png");
-    background-size: 32px;
+    background-size: auto 100%;
     background-repeat: no-repeat;
-    padding-left: 40px;
+    padding-left: 1.5em;
 }
 
 @keyframes colorRotate {
