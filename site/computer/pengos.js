@@ -1,7 +1,7 @@
 const programs = {
     "pong": function()
     {
-        window.open("/pongerslair", '_blank');
+        window.open("/pongerslair", "_blank");
         print("PONG for PengOS (c) 1988 Ponger");
     },
     
@@ -22,6 +22,50 @@ const programs = {
 
 const Program = Symbol();
 
+class Document {}
+
+class Image extends Document
+{
+    open()
+    {
+        print("Opening an image...")
+    }
+}
+
+class AudioFile extends Document
+{
+    constructor(name, song)
+    {
+        super(name, song);
+        this.name = name;
+        this.song = song;
+    }
+
+    async open()
+    {
+        print(`Playing ${this.name}...`);
+        print("Press any key to exit.")
+        this.song.fastSeek(0);
+        this.song.play();
+        await pressAnyKey();
+        this.song.pause();
+    }
+}
+
+class TextFile extends Document
+{
+    constructor(text)
+    {
+        super();
+        this.text = text;
+    }
+
+    open()
+    {
+        print(this.text);
+    }
+}
+
 const fileSystem = {
     "pengos": {
 
@@ -34,9 +78,14 @@ const fileSystem = {
         }
     },
     "documents": {
-        "pengers": {}
+        "pengers": {},
+        "music": {
+            "canyon.mid": new AudioFile("CANYON.MID", canyonSong),
+            "passport.mid": new AudioFile("PASSPORT.MID", passportSong),
+            "king.mid": new AudioFile("KING.MID", kingSong)
+        }
     },
-    "password.txt": "silversurfer7",
+    "password.txt": new TextFile("silversurfer7"),
     "date.exe": Program,
     "funk.exe": Program
 }
@@ -151,14 +200,14 @@ const commands = [
         }
     },
 
-    function open(name)
+    async function open(name)
     {
         let dir = path[path.length - 1];
         let file = dir[name];
 
         if (isFile(file))
         {
-            print(file);
+            await file.open();
         }
         else if (file === undefined)
         {
@@ -205,7 +254,7 @@ function pressAnyKey()
         (resolve, reject) => {
             let listener = function(event)
             {
-                document.removeEventListener("keypress", listener);
+                document.removeEventListener("keydown", listener);
                 event.preventDefault();
                 resolve();
             }
@@ -216,7 +265,7 @@ function pressAnyKey()
 
 function isDirectory(thing)
 {
-    return typeof(thing) == "object";
+    return !isProgram(thing) && !isFile(thing);
 }
 
 function isProgram(thing)
@@ -226,7 +275,7 @@ function isProgram(thing)
 
 function isFile(thing)
 {
-    return typeof(thing) == "string";
+    return thing instanceof Document;
 }
 
 let path = [fileSystem];
