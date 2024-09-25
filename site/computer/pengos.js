@@ -1,9 +1,19 @@
 const fileSystem = {
-    "docs": {
-        "pics": {}
+    "pengos": {
+
+    },
+    "software": {
+        "games": {
+            "pong": {
+                "pong.exe": () => { window.open("/pongerslair", '_blank'); print("PONG for PengOS (c) 1988 Ponger"); }
+            }
+        }
+    },
+    "documents": {
+        "pengers": {}
     },
     "password.txt": "silversurfer7",
-    "date.exe": () => (new Date()).toDateString()
+    "date.exe": () => print((new Date()).toDateString())
 }
 
 const commands = [
@@ -92,7 +102,7 @@ const commands = [
 
         if (isProgram(program))
         {
-            print(program());
+            program();
         }
         else if (program === undefined)
         {
