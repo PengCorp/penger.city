@@ -86,8 +86,7 @@ const fileSystem = {
         }
     },
     "password.txt": new TextFile("silversurfer7"),
-    "date.exe": Program,
-    "funk.exe": Program
+    "date.exe": Program
 }
 
 const commands = [
