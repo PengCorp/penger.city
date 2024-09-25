@@ -26,9 +26,21 @@ class Document {}
 
 class Image extends Document
 {
+    constructor(name, url)
+    {
+        super();
+        this.name = name;
+        this.url = url;
+    }
+
     open()
     {
-        print("Opening an image...")
+        window.open(this.url, "_blank");
+        print(`Opening ${this.name}...`);        
+        print("Check your web browser's pop-up settings if nothing appears...");
+        print("");
+        print("...hey!");
+        print("What's a web browser?");
     }
 }
 
@@ -36,7 +48,7 @@ class AudioFile extends Document
 {
     constructor(name, song)
     {
-        super(name, song);
+        super();
         this.name = name;
         this.song = song;
     }
@@ -66,9 +78,12 @@ class TextFile extends Document
     }
 }
 
+const licenseText = "(C) COPYRIGHT 1985 PENGER CORPORATION (PENGCORP)\n\n" + "BY VIEWING THIS FILE YOU ARE COMMITING A FELONY UNDER\n"
+    + "TITLE 2,239,132 SECTION XII OF THE PENGER CRIMINAL JUSTICE\nCODE";
+
 const fileSystem = {
     "pengos": {
-
+        "LICENSE.TXT": new TextFile(licenseText)
     },
     "software": {
         "games": {
@@ -78,14 +93,16 @@ const fileSystem = {
         }
     },
     "documents": {
-        "pengers": {},
+        "pengers": {
+            "nerdger.png": new Image("NERDGER.PNG", "images/pengers/nerdger.png"),
+            "macger.png": new Image("MACGER.PNG", "images/pengers/macger.png")
+        },
         "music": {
             "canyon.mid": new AudioFile("CANYON.MID", canyonSong),
             "passport.mid": new AudioFile("PASSPORT.MID", passportSong),
             "king.mid": new AudioFile("KING.MID", kingSong)
         }
     },
-    "password.txt": new TextFile("silversurfer7"),
     "date.exe": Program
 }
 
