@@ -12,6 +12,17 @@ body {
     animation: CookgerSpin 2s infinite linear;
 }
 
+.cookgerangry {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    width: 32px;
+    height: 32px;
+    z-index: 9001;
+
+    display: none;
+}
+
 .donut {
     position: absolute;
     left: 16px;

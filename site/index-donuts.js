@@ -137,11 +137,13 @@ $(document).ready(function () {
 
         if (donut_frenzy_timer > 5) {
             donut_odds = 95;
+            $(".cookgerangry")[0].style = 'display: none;';
         }
 
         if (chance > 99.9) {
             donut_frenzy_timer = 0;
             donut_odds = 30;
+            $(".cookgerangry")[0].style = 'display: block;';
         } else if (chance > donut_odds) {
             donutsToAppend.push(makeNewDonut());
         }
