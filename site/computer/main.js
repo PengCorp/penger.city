@@ -34,11 +34,13 @@
         let modifier = event.altKey || event.ctrlKey;
         let input = prompt.input;
 
+        console.log(event.code);
+
         if (event.code == "Backspace")
         {
             input.innerText = input.innerText.substring(0, input.innerText.length - 1);
         }
-        else if (event.code == "Enter")
+        else if (event.code == "Enter" || event.code == "NumpadEnter")
         {
             let output = submit(input.innerText);
             addPrompt(output);

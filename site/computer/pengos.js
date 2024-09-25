@@ -1,3 +1,18 @@
+const programs = {
+    "pong": function()
+    {
+        window.open("/pongerslair", '_blank');
+        print("PONG for PengOS (c) 1988 Ponger");
+    },
+    
+    "date": function()
+    {
+        print((new Date()).toDateString());
+    }
+}
+
+const Program = Symbol();
+
 const fileSystem = {
     "pengos": {
 
@@ -5,7 +20,7 @@ const fileSystem = {
     "software": {
         "games": {
             "pong": {
-                "pong.exe": () => { window.open("/pongerslair", '_blank'); print("PONG for PengOS (c) 1988 Ponger"); }
+                "pong.exe": Program
             }
         }
     },
@@ -13,7 +28,7 @@ const fileSystem = {
         "pengers": {}
     },
     "password.txt": "silversurfer7",
-    "date.exe": () => print((new Date()).toDateString())
+    "date.exe": Program
 }
 
 const commands = [
@@ -25,8 +40,9 @@ const commands = [
             "look": "Display contents of current directory",
             "go": "  Navigate directories",
             "up": "  Navigate to parent directory",
-            "run": " Execute program",
-            "open": "Display file"
+            "open": "Display file",
+            "take": "Add a program to the command list",
+            "drop": "Remove a program from the command list"
         };
 
         for (let command of commands)
@@ -38,6 +54,16 @@ const commands = [
             else
             {
                 print(command.name + ": HELP ENTRY NOT FOUND");
+            }
+        }
+
+        if (extraCommands.length > 0)
+        {
+            print("");
+            print("Available programs:")
+            for (let command of extraCommands)
+            {
+                print(command);
             }
         }
     },
@@ -95,25 +121,6 @@ const commands = [
         print("Went up to " + pathNames.join("/"));
     },
 
-    function run(name)
-    {
-        let dir = path[path.length - 1];
-        let program = dir[name];
-
-        if (isProgram(program))
-        {
-            program();
-        }
-        else if (program === undefined)
-        {
-            print("Does not exist");
-        }
-        else
-        {
-            print("Not executable")
-        }
-    },
-
     function open(name)
     {
         let dir = path[path.length - 1];
@@ -131,6 +138,33 @@ const commands = [
         {
             print("Not readable")
         }
+    },
+
+    function take(name)
+    {
+        let dir = path[path.length - 1];
+        let program = dir[name];
+
+        if (isProgram(program))
+        {
+            extraCommands.push(name.split(".")[0]);
+            localStorage.setItem("pengos/programs", JSON.stringify(extraCommands));
+            print("Added " + name.toUpperCase() + " to command list.");
+        }
+        else if (program === undefined)
+        {
+            print("Does not exist");
+        }
+        else
+        {
+            print("Not executable")
+        }
+    },
+
+    function drop(name)
+    {
+        extraCommands = extraCommands.filter(x => x != name);
+        localStorage.setItem("pengos/programs", JSON.stringify(extraCommands));
     }
 
 ];
@@ -142,7 +176,7 @@ function isDirectory(thing)
 
 function isProgram(thing)
 {
-    return typeof(thing) == "function";
+    return thing === Program;
 }
 
 function isFile(thing)
@@ -157,6 +191,15 @@ function print(text)
 
 let path = [fileSystem];
 let pathNames = ["A:"];
+
+let extraCommands = [];
+{
+    let storedCommands = localStorage.getItem("pengos/programs");
+    if (storedCommands !== null)
+    {
+        extraCommands = JSON.parse(storedCommands);
+    }
+}
 
 let stdout;
 
@@ -202,6 +245,13 @@ function submit(input)
             f(...args);
             return stdout;
         }
+    }
+
+    let f = programs[command];
+    if (f !== undefined)
+    {
+        f(...args);
+        return stdout;
     }
 
     print("Unknown command: " + command);
