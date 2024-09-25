@@ -122,6 +122,130 @@ header a {
     position: relative;
 }
 
+@media (width <= 1650px) {
+    .keyboard-box
+    {
+        display: none;
+    }
+}
+
+@media (height <= 850px) {
+    .keyboard-box
+    {
+        display: none;
+    }
+}
+  
+
+.keyboard-box
+{
+    position: absolute;
+    left: calc((100vw - ((4 / 3) * 70vh + 60vh)) / 2);
+    bottom: 10px;
+    min-width: calc((4 / 3) * 70vh + 60vh);
+}
+
+.keyboard
+{
+    transform-origin: bottom;
+    transform: perspective(1000px) rotateX(45deg);
+    background-color: #999;
+    padding: 10px;
+    display: flex;
+    gap: 40px;
+    border-radius: 2px;
+}
+
+.keyboard-bottom
+{
+    height: 30px;
+    width: 100%;
+    background: #aaa;
+}
+
+.keyboard span
+{
+    display: inline-block;
+    width: 54px;    
+    text-align: center;
+    padding: 5px;
+    font-family: sans-serif;
+    background: #bbb;
+    border: 5px outset #aaa;
+    box-sizing: border-box;
+}
+
+/* .keyboard span:hover
+{
+    background: #aaa;
+    border: 4px solid #666;
+    padding-top: 10px;
+} */
+
+.keyboard .space
+{
+    flex-grow: 1;
+}
+
+.keyboard .smalltext
+{
+    font-size: 13px;
+    padding: 2px;
+}
+
+.keyboard .group
+{
+    /* background: #8d8d8d; */
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.keyboard .row
+{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 8px;
+}
+
+.keyboard .ctrl
+{
+    min-width: 80px;
+}
+
+.keyboard .big
+{
+    min-width: 120px;
+}
+
+.keyboard .bigger
+{
+    min-width: 140px;
+}
+
+.keyboard .biggest
+{
+    min-width: 170px;
+}
+
+.keyboard .fill
+{
+    flex-grow: 1;
+}
+
+.desk
+{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 25vh;
+    background: url("wood.jpg");
+    z-index: -1;
+}
+
 @keyframes blinker {
     50% {
         opacity: 0;
