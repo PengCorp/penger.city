@@ -8,6 +8,19 @@ const programs = {
     "date": function()
     {
         print((new Date()).toDateString());
+    },
+
+    "wait": async function()
+    {
+        print("Waiting...");
+        return new Promise(
+            (resolve, reject) => {
+                setTimeout(
+                    resolve,
+                    5000
+                );
+            }
+        )
     }
 }
 
@@ -28,7 +41,8 @@ const fileSystem = {
         "pengers": {}
     },
     "password.txt": "silversurfer7",
-    "date.exe": Program
+    "date.exe": Program,
+    "wait.exe": Program
 }
 
 const commands = [
@@ -122,14 +136,14 @@ const commands = [
         print("Went up to " + pathNames.join("/"));
     },
 
-    function run(name)
+    async function run(name)
     {
         let dir = path[path.length - 1];
         let program = dir[name];
 
         if (isProgram(program))
         {
-            programs[name.split(".")[0]]();
+            return await programs[name.split(".")[0]]();
         }
         else if (program === undefined)
         {
@@ -206,7 +220,8 @@ function isFile(thing)
 
 function print(text)
 {
-    stdout += text + "\n";
+    stdout.innerText += text + "\n";
+    scroll();
 }
 
 let path = [fileSystem];
@@ -247,7 +262,7 @@ function tab(input)
     return "";
 }
 
-function submit(input)
+async function submit(input, container)
 {
     let tokens = input.split(" ");
 
@@ -256,26 +271,24 @@ function submit(input)
     let command = tokens[0];
     let args = tokens.slice(1);
 
-    stdout = "";
+    stdout = container;
 
     for (let f of commands)
     {
         if (f.name == command || command == f.name[0])
         {
-            f(...args);
-            return stdout;
+            await f(...args);            
+            return;
         }
     }
 
     let f = programs[command];
     if (f !== undefined)
     {
-        f(...args);
-        return stdout;
+        await f(...args);
+        return;
     }
 
     print("Unknown command: " + command);
-    print("Try \"help\" or \"h\" to see available commands")
-
-    return stdout;
+    print("Try \"help\" or \"h\" to see available commands");
 }

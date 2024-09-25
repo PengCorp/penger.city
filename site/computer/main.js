@@ -1,3 +1,13 @@
+function scroll()
+{
+    let offset = screenContents.clientHeight - (document.getElementById("screen").clientHeight - 40);
+
+    if (offset > 0)
+    {
+        screenContents.style.top = "-" + offset + "px";
+    }
+}
+
 (function()
 {
     function create(name)
@@ -29,7 +39,7 @@
         return content;
     }
 
-    function onKey(event)
+    async function onKey(event)
     {
         let modifier = event.altKey || event.ctrlKey;
         let input = prompt.input;
@@ -42,8 +52,14 @@
         }
         else if (event.code == "Enter" || event.code == "NumpadEnter")
         {
-            let output = submit(input.innerText);
-            addPrompt(output);
+            if (prompt !== null)
+            {
+                prompt.removeChild(prompt.cursor);
+            }
+
+            let response = addResponse();
+            await submit(input.innerText, response);
+            addPrompt();
         }
         else if (event.code == "Tab")
         {
@@ -62,34 +78,26 @@
         scroll();
     }
 
-    function scroll()
+    function addResponse()
     {
-        let offset = screenContents.clientHeight - (document.getElementById("screen").clientHeight - 40);
-
-        if (offset > 0)
-        {
-            screenContents.style.top = "-" + offset + "px";
-        }
+        let response = create("p")        
+        screenContents.appendChild(response);
+        return response;
     }
 
-    function addPrompt(output)
+    function addPrompt()
     {
-        response = create("p")
-        response.innerText = output;
-        screenContents.appendChild(response);
-
-        if (prompt !== null)
-        {
-            prompt.removeChild(prompt.cursor);
-        }
-
         prompt = create("prompt")
         screenContents.appendChild(prompt);
     }
 
     let prompt = null;
 
-    addPrompt(startup());
+    {
+        let response = addResponse();
+        response.innerText = startup();
+    }
+    addPrompt();
 
     addEventListener("keydown", onKey);
 
