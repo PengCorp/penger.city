@@ -1,13 +1,3 @@
-function scroll()
-{
-    let offset = screenContents.clientHeight - (document.getElementById("screen").clientHeight - 40);
-
-    if (offset > 0)
-    {
-        screenContents.style.top = "-" + offset + "px";
-    }
-}
-
 (function()
 {
     function create(name)
@@ -58,7 +48,14 @@ function scroll()
             }
 
             let response = addResponse();
-            await submit(input.innerText, response);
+            await submit(
+                input.innerText,
+                function(text)
+                {
+                    response.innerText += text + "\n";
+                    scroll();
+                }
+            );
             addPrompt();
         }
         else if (event.code == "Tab")
@@ -76,6 +73,16 @@ function scroll()
         }
 
         scroll();
+    }
+
+    function scroll()
+    {
+        let offset = screenContents.clientHeight - (document.getElementById("screen").clientHeight - 40);
+
+        if (offset > 0)
+        {
+            screenContents.style.top = "-" + offset + "px";
+        }
     }
 
     function addResponse()

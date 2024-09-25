@@ -218,12 +218,6 @@ function isFile(thing)
     return typeof(thing) == "string";
 }
 
-function print(text)
-{
-    stdout.innerText += text + "\n";
-    scroll();
-}
-
 let path = [fileSystem];
 let pathNames = ["A:"];
 
@@ -236,7 +230,7 @@ let extraCommands = [];
     }
 }
 
-let stdout;
+let print;
 
 function startup()
 {
@@ -262,7 +256,7 @@ function tab(input)
     return "";
 }
 
-async function submit(input, container)
+async function submit(input, printFunction)
 {
     let tokens = input.split(" ");
 
@@ -271,7 +265,7 @@ async function submit(input, container)
     let command = tokens[0];
     let args = tokens.slice(1);
 
-    stdout = container;
+    print = printFunction;
 
     for (let f of commands)
     {
