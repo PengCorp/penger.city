@@ -12,18 +12,11 @@ const programs = {
 
     "funk": async function()
     {
-        print("Waiting...");
-        return new Promise(
-            (resolve, reject) => {
-                let listener = function(event)
-                {
-                    document.removeEventListener("keypress", listener);
-                    event.preventDefault();
-                    resolve();
-                }
-                document.addEventListener("keydown", listener);
-            }
-        )
+        print("Playing CANYON.MID...");
+        canyonSong.fastSeek(0);
+        canyonSong.play();
+        await pressAnyKey();
+        canyonSong.pause();
     }
 }
 
@@ -205,6 +198,21 @@ const commands = [
     }
 
 ];
+
+function pressAnyKey()
+{
+    return new Promise(
+        (resolve, reject) => {
+            let listener = function(event)
+            {
+                document.removeEventListener("keypress", listener);
+                event.preventDefault();
+                resolve();
+            }
+            document.addEventListener("keydown", listener);
+        }
+    )
+}
 
 function isDirectory(thing)
 {
