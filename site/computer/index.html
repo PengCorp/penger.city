@@ -158,8 +158,14 @@
         <div class="keyboard-bottom"></div>
     </div>
     <div class="desk"></div>
+    <template name="prompt" rooted>
+        <p class="prompt">A:/<span id="input"></span><span id="cursor" class="blink">_</span></p>
+    </template>
+    <audio id="canyonSong">
+        <source
+            src="media/CANYON.ogg"
+            type="audio/ogg"
+        />
+    </audio>
 </body>
-<template name="prompt" rooted>
-    <p class="prompt">A:/<span id="input"></span><span id="cursor" class="blink">_</span></p>
-</template>
 </html>

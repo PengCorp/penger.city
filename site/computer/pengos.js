@@ -10,15 +10,18 @@ const programs = {
         print((new Date()).toDateString());
     },
 
-    "wait": async function()
+    "funk": async function()
     {
         print("Waiting...");
         return new Promise(
             (resolve, reject) => {
-                setTimeout(
-                    resolve,
-                    5000
-                );
+                let listener = function(event)
+                {
+                    document.removeEventListener("keypress", listener);
+                    event.preventDefault();
+                    resolve();
+                }
+                document.addEventListener("keydown", listener);
             }
         )
     }
@@ -42,7 +45,7 @@ const fileSystem = {
     },
     "password.txt": "silversurfer7",
     "date.exe": Program,
-    "wait.exe": Program
+    "funk.exe": Program
 }
 
 const commands = [

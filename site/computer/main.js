@@ -31,6 +31,11 @@
 
     async function onKey(event)
     {
+        if (inChildProcess)
+        {
+            return;
+        }
+
         let modifier = event.altKey || event.ctrlKey;
         let input = prompt.input;
 
@@ -48,6 +53,7 @@
             }
 
             let response = addResponse();
+            inChildProcess = true;
             await submit(
                 input.innerText,
                 function(text)
@@ -56,6 +62,27 @@
                     scroll();
                 }
             );
+            
+            // Hack to deal with the order in which events happen.
+            //
+            // The purpose of the inChildProcess flag is so that the main "shell loop" (this function) does not
+            // process key events while a "child process" (a command the user runs in the shell) is running,
+            // since those key events are for the child. So we set inChildProcess = true before running a comand,
+            // and then unset it when the command returns.
+            //
+            // The problem is that if a command is terminated by a keypress ("Press Any Key To Continue..."),
+            // then the order of events is (1) the command exits, (2) the statement below runs, (3) the key event
+            // reaches this listener. So the flag will have already been unset by the time it's needed, in that
+            // case. The setTimeout() with 0 duration thing is just a trick to tell JavaScript to run the event
+            // loop around again at least once before executing a piece of code.
+            //
+            // (event.preventDefault() did not seem to help)
+            //
+            setTimeout(
+                () => { inChildProcess = false; },
+                0
+            );
+            
             addPrompt();
         }
         else if (event.code == "Tab")
@@ -97,6 +124,8 @@
         prompt = create("prompt")
         screenContents.appendChild(prompt);
     }
+
+    let inChildProcess = false;
 
     let prompt = null;
 
