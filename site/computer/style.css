@@ -13,7 +13,7 @@ body {
 
 body {
     padding: 25px;
-    background: url("curtain_pattern.png");
+    background: url("images/curtain_pattern.png");
 }
 
 header {
@@ -243,7 +243,7 @@ header a {
     bottom: 0px;
     width: 100%;
     height: 25vh;
-    background: url("wood.jpg");
+    background: url("images/wood.jpg");
     z-index: -1;
 }
 
