@@ -352,9 +352,9 @@ async function submit(input, printFunction)
         }
     }
 
-    let f = programs[command];
-    if (f !== undefined)
+    if (extraCommands.includes(command))
     {
+        let f = programs[command];
         await f(...args);
         return;
     }
