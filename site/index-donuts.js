@@ -111,7 +111,7 @@ $(document).ready(function () {
             }
 
             if (donut.y > Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) || 
-                donut.x > Math.max(document.documentElement.clientWidth || 0, window.innerHeight || 0)
+                donut.x > Math.max(document.documentElement.clientWidth || 0, window.innerHeight || 0))
             {
                 donut.$ref.remove();
                 newDonuts = newDonuts.filter((d) => d !== donut);
