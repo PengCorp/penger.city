@@ -110,7 +110,9 @@ $(document).ready(function () {
                 jetger.style = 'animation: Jetger 70s infinite, Spinny 1s infinite linear';
             }
 
-            if (donut.y > Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)) {
+            if (donut.y > Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) || 
+                donut.x > Math.max(document.documentElement.clientWidth || 0, window.innerHeight || 0)
+            {
                 donut.$ref.remove();
                 newDonuts = newDonuts.filter((d) => d !== donut);
             }
