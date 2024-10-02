@@ -21,6 +21,12 @@
 
     <p>This page contains a curated set of best pixel-perfect Pengers.</p>
 
+    <p>The original Penger</p>
+
+    <div class="penger"><a href="pengers/Penger.png"><img src="pengers/Penger.png" /></a></div>
+
+    <p>All the Pengers </p>
+
     <div class="pengers">
         {% for image in images %}
         <div class="penger"><a href="{{ image['original'] }}"><img src="{{ image['resized'] if image['resized'] else image['original'] }}" /></a></div>
