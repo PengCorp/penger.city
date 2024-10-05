@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Penger gallery</title>
     <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="/gallery/gallery.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/gallery/index.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -44,6 +44,15 @@
 <body>
     <h1>{{ title }}</h1>
     <div id="homelink"><a href="/">&lt;&lt; Back to Home</a></div>
+    <div class="directory">
+        <h2>Museum</h2>
+        <div class="mpengers">
+            <div class="mpenger"><a href="../museum/pengers/Penger.png"><img src="../museum/pengers/Penger.png" /></a></div>
+            {% for museum_image in museum_images %}
+            <div class="mpenger"><a href="{{ museum_image['original'] }}"><img src="{{ museum_image['resized'] if museum_image['resized'] else museum_image['original'] }}" /></a></div>
+            {% endfor %}
+        </div>
+    </div>
     {% for dir, images in images_with_dirs.items() %}
     <div class="directory">
         {% if dir != "." %}
