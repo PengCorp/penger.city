@@ -1,0 +1,189 @@
+@font-face {
+    font-family: 'Comic Sans';
+    src: url('../fonts/Comic_Sans_MS.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html
+{
+    min-height: 100%;
+    background-image: url("./media/background-transparent.png");
+    background-color: azure;
+
+    font-family: 'Comic Sans';
+}
+
+body
+{
+    width: 100%;
+    min-height: 100%;
+    margin: 0px;
+    padding: 20px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.header 
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 100px;
+}
+
+.cookger 
+{
+    background-color: lemonchiffon;
+    border-radius: 50%;
+    border: 3px solid black;
+    margin-right: 5%;
+}
+
+.cookger-and-sitename
+{
+    display: flex;
+    flex-flow: column;
+
+    margin-right: 5%;
+}
+
+.site-name
+{
+    align-self: center;
+    font-size: 2em;
+    font-weight: 900;
+    background-color: lemonchiffon;
+    border: 3px solid black;
+    margin-top: 0.25em;
+    padding: 0.5em;
+}
+
+.meniu-and-hello
+{
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+    border: 4px solid black;
+    /* margin-right: 10%; */
+    background-image: url("./media/image.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-clip: border-box;
+}
+
+.hello
+{
+    /* flex-grow: 1; */
+    background-color: lemonchiffon;
+    align-self: center;
+    text-align: center;
+    margin: 0;
+    font-size: 2em;
+    margin-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.75em ;
+    font-weight: 900;
+    border: 10px solid rgb(61, 0, 0);
+    border-radius: 50%;
+}
+
+img {
+    image-rendering: pixelated;
+}
+
+.menu {
+    font-size: 24px;
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 64px;
+    padding: 16px;
+    margin-top: 0;
+
+    /* border: dotted white 6px; */
+    font-weight: 600;
+}
+
+.menu li {
+    list-style: none;
+    gap: 16px;
+    color: black;
+    background-color: lemonchiffon;
+    border: 3px solid gray;
+    padding: 5px;
+}
+
+.menu li:hover {
+    background-color: yellow;
+}
+
+.menu img {
+    width: 32px;
+}
+
+.menu a {
+    display: flex;
+    /* required for the spinning to work?? */
+}
+
+.menu-item {
+    display: flex;
+    color: black;
+}
+
+.menu a:link,
+.menu a:visited {
+    text-decoration: none;
+}
+
+section {
+    width: 40%;
+    background: lemonchiffon;
+    border: 5px solid black;
+    padding: 2em;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 100px;
+    position: relative;
+    font-size: 1.4em;
+    align-self: center;
+}
+
+section p:first-of-type {
+    margin-top: 0px;
+}
+
+section h1 {
+    font-size: 40px;
+    font-weight: 200;
+    position: absolute;
+    top: -1.6em;
+    left: 0.7em;
+    background: lemonchiffon;
+    color: black;
+    border: 5px solid black;
+
+    padding: 5px;
+    line-height: 1em;
+}
+
+.recipe-spoon-cookger {
+    position: absolute;
+    top: 3em;
+    right: -8em;
+}
+
+section h2 {
+    margin-bottom: 10px;
+}
+
+section ul {
+    margin-top: 0px;
+}
