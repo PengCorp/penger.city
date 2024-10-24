@@ -131,3 +131,12 @@ img.penger {
     width: auto;
     image-rendering: pixelated;
 }
+
+a.thumbnail {
+    display: inline-block;
+    text-decoration: none;
+}
+
+a.thumbnail figure {
+    display: block;
+}
