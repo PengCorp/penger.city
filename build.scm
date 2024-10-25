@@ -10,7 +10,7 @@
                    "    gallery       - builds the gallery\n"
                    "    serve         - serve the website on localhost\n"
                    "    museum        - builds the museum\n"
-                   "    rename-emoji  - rename a museum emoji. rename-emoji <file-from> <file-to>\n"
+                   "    rename-emoji  - rename a museum emoji. rename-emoji thing.gif thing2.gif. no need to include the full path\n"
                    "    help          - prints this\n"
                    ))
 
