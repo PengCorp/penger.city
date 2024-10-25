@@ -6,11 +6,12 @@
 (define (help-text)
     (string-append "Cephon's FUCKING EPIC build system that does NOT suck.\n\n"
                    "Commands:\n"
-                   "    all     - runs all the scripts that produce something (gallery and museum)\n"
-                   "    gallery - builds the gallery\n"
-                   "    serve   - serve the website on localhost\n"
-                   "    museum  - builds the museum\n"
-                   "    help    - prints this\n"
+                   "    all           - runs all the scripts that produce something (gallery and museum)\n"
+                   "    gallery       - builds the gallery\n"
+                   "    serve         - serve the website on localhost\n"
+                   "    museum        - builds the museum\n"
+                   "    rename-emoji  - rename a museum emoji. rename-emoji <file-from> <file-to>\n"
+                   "    help          - prints this\n"
                    ))
 
 (if (null? *args*)
@@ -29,13 +30,20 @@
     (quit))
 
 
-(define (text-to-build-command text)
+(define (text-to-build-command text other-args)
     (cond
         ((equal? text "gallery") (build-gallery))
         ((equal? text "museum" ) (build-museum))
         ((equal? text "serve"  ) (serve-site))
         ((equal? text "help"   )
             (begin (display (help-text)) (quit)))
+        ((equal? text "rename-emoji")
+            (begin
+                (if (not (= (cmd "mv" (string-append "site/museum/pengers/" (car other-args)) (string-append "site/museum/pengers/" (cadr other-args))) 0)) (die "Failed to rename emoji"))
+                (if (not (= (cmd "fossil" "rm" (string-append "site/museum/pengers/" (car other-args))) 0)) (die "Failed to untrack emoji using fossil"))
+                (if (not (= (cmd "fossil" "add" (string-append "site/museum/pengers/" (cadr other-args))) 0)) (die "Failed to track new emoji using fossil"))
+                (display "Emoji renamed! please do not forget to rebuild the museum with `./build.scm museum`!") (newline)
+                (quit)))
         ((equal? text "all"    )
             (begin
                 (build-gallery)
@@ -45,6 +53,6 @@
 
 (define (handle-arguments args)
     (if (not (null? args))
-        (begin (text-to-build-command (car args)) (handle-arguments (cdr args)))))
+        (begin (text-to-build-command (car args) (cdr args)) (handle-arguments (cdr args)))))
 
 (handle-arguments *args*)
