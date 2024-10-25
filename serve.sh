@@ -1,4 +1,2 @@
 pushd site
-python3 -m http.server
-
-asd
+python3 ../scripts/server.py
