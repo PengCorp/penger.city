@@ -13,10 +13,28 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
+    <script>
+    window.notification_timer = 4001.0;
+
+    function copy_text_and_notify(text) {
+        navigator.clipboard.writeText(text);
+        window.notification_timer = 0;
+        notification.innerHTML = text + " has been copied!";
+    }
+
+    setInterval(function(){
+        if(window.notification_timer > 4000) {
+            notification.style.display = "none";
+        } else {
+            notification.style.display = "block";
+            window.notification_timer += 200;
+        }
+    }, 200);
+    </script>
 </head>
 <body>
     <h1>Museum of Penger</h1>
-    
+
     <div id="homelink"><a href="/">&lt;&lt; Back to Home</a></div>
 
     <p>This page contains a curated set of best pixel-perfect Pengers.</p>
@@ -27,298 +45,1317 @@
 
     <p>All the Pengers </p>
 
+    <i class="tutorial">Click a penger to copy their discord emoji code!</i>
+
     <div class="pengers">
         
-        <div class="penger"><a href="pengers/18Plusger.png"><img src="pengers/18Plusger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/4DPenger.gif"><img src="pengers/4DPenger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/AllThePengers.gif"><img src="pengers/AllThePengers.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/animated 69 penger.gif"><img src="pengers/animated 69 penger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Baldger.png"><img src="pengers/Baldger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Beholdger.gif"><img src="pengers/Beholdger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Blenger.png"><img src="pengers/Blenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Capger.png"><img src="pengers/Capger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/CapgerSaysTransRights.png"><img src="pengers/CapgerSaysTransRights.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/CephonPenger.png"><img src="pengers/CephonPenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Clipenger.png"><img src="pengers/Clipenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Clownger.png"><img src="pengers/Clownger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Coffeeger.png"><img src="pengers/Coffeeger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Colorger.gif"><img src="pengers/Colorger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Cookger.png"><img src="pengers/Cookger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Criminalger.png"><img src="pengers/Criminalger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/CyberPenger.png"><img src="pengers/CyberPenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Deadger.png"><img src="pengers/Deadger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Demureger.png"><img src="pengers/Demureger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Disger.png"><img src="pengers/Disger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/DoctorPenger.png"><img src="pengers/DoctorPenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Doomger.png"><img src="pengers/Doomger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Factoryger.png"><img src="pengers/Factoryger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Fatger.png"><img src="pengers/Fatger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Faxger.png"><img src="pengers/Faxger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Fishger.gif"><img src="pengers/Fishger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Flashbang.gif"><img src="pengers/Flashbang.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/FullCookger.png"><img src="pengers/FullCookger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Geniusger.png"><img src="pengers/Geniusger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Ghostyger.png"><img src="pengers/Ghostyger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/GNUPenger.png"><img src="pengers/GNUPenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Gonger.png"><img src="pengers/Gonger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Gopnikger.png"><img src="pengers/Gopnikger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Grubenger.png"><img src="pengers/Grubenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Guitarger.gif"><img src="pengers/Guitarger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/HDPenger.png"><img src="pengers/HDPenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/HolyCPenger.png"><img src="pengers/HolyCPenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Holyger.png"><img src="pengers/Holyger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Hoodger.png"><img src="pengers/Hoodger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Howdyger.png"><img src="pengers/Howdyger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Jetger.gif"><img src="pengers/Jetger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Jonkger.png"><img src="pengers/Jonkger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/JPenger.png"><img src="pengers/JPenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Kidger.png"><img src="pengers/Kidger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Knightger.png"><img src="pengers/Knightger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Laptopger.png"><img src="pengers/Laptopger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Macger.png"><img src="pengers/Macger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Madger.png"><img src="pengers/Madger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Malger.png"><img src="pengers/Malger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Michaelger.png"><img src="pengers/Michaelger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Mineger.png"><img src="pengers/Mineger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Momger.png"><img src="pengers/Momger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Moustacheger.png"><img src="pengers/Moustacheger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Nerdger.png"><img src="pengers/Nerdger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/NinjaPenger.png"><img src="pengers/NinjaPenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/NuclearPenger.gif"><img src="pengers/NuclearPenger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/P.png"><img src="pengers/P.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Paintger.png"><img src="pengers/Paintger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Partyger.gif"><img src="pengers/Partyger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Partyger.png"><img src="pengers/Partyger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PBJPenger.gif"><img src="pengers/PBJPenger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Pe.png"><img src="pengers/Pe.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Peng.png"><img src="pengers/Peng.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Pengachu.png"><img src="pengers/Pengachu.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Penganger.png"><img src="pengers/Penganger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Pengcoder.png"><img src="pengers/Pengcoder.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Penger.png"><img src="pengers/Penger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/penger_dance.gif"><img src="pengers/penger_dance.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/penger_hallway.gif"><img src="pengers/penger_hallway.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerAmaze.gif"><img src="pengers/PengerAmaze.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerAndSon.png"><img src="pengers/PengerAndSon.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Pengerberry.png"><img src="pengers/Pengerberry.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerCoin.gif"><img src="pengers/PengerCoin.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerCoin.png"><img src="pengers/PengerCoin.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerFront.png"><img src="pengers/PengerFront.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerGiga.png"><img src="pengers/PengerGiga.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerH.png"><img src="pengers/PengerH.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerHeart.png"><img src="pengers/PengerHeart.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerHug.png"><img src="pengers/PengerHug.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerNote.png"><img src="pengers/PengerNote.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerNumberOne.png"><img src="pengers/PengerNumberOne.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerSeller.png"><img src="pengers/PengerSeller.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerSilverfoot.png"><img src="pengers/PengerSilverfoot.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerSmokingAFatDart.gif"><img src="pengers/PengerSmokingAFatDart.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerStatue.png"><img src="pengers/PengerStatue.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerStream.png"><img src="pengers/PengerStream.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerSwag.gif"><img src="pengers/PengerSwag.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengerThumbsUp.png"><img src="pengers/PengerThumbsUp.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/penginAround.gif"><img src="pengers/penginAround.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/PengKisser.png"><img src="pengers/PengKisser.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Penglup.png"><img src="pengers/Penglup.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Pinker.png"><img src="pengers/Pinker.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PlanetPenger.gif"><img src="pengers/PlanetPenger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Policeger.png"><img src="pengers/Policeger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PongarBarbarian.png"><img src="pengers/PongarBarbarian.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PongarTheBarbarian.png"><img src="pengers/PongarTheBarbarian.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Ponger.png"><img src="pengers/Ponger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PongerMagic.gif"><img src="pengers/PongerMagic.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/PongerWizard.png"><img src="pengers/PongerWizard.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/PowerPenger.png"><img src="pengers/PowerPenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Presentger.png"><img src="pengers/Presentger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Queenger.png"><img src="pengers/Queenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Redger.png"><img src="pengers/Redger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Richger.png"><img src="pengers/Richger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Rockger.gif"><img src="pengers/Rockger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Rockhopger.png"><img src="pengers/Rockhopger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Rusger.gif"><img src="pengers/Rusger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/SailorMoonger.png"><img src="pengers/SailorMoonger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Saiyanger.gif"><img src="pengers/Saiyanger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Samiger.png"><img src="pengers/Samiger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/ScientistPenger.png"><img src="pengers/ScientistPenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/ScientistPengerA.gif"><img src="pengers/ScientistPengerA.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/ScientistPengerFlask.png"><img src="pengers/ScientistPengerFlask.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Sleepger.png"><img src="pengers/Sleepger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/SmoothPenger.png"><img src="pengers/SmoothPenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/SmoothPengernal.png"><img src="pengers/SmoothPengernal.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Soupger.png"><img src="pengers/Soupger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Spainger.png"><img src="pengers/Spainger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Spillger.png"><img src="pengers/Spillger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Sponger.png"><img src="pengers/Sponger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Startleger.png"><img src="pengers/Startleger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Stronger.png"><img src="pengers/Stronger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Suitger.png"><img src="pengers/Suitger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/SuperPenger.png"><img src="pengers/SuperPenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Surfger.png"><img src="pengers/Surfger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Susger.png"><img src="pengers/Susger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Swagger.png"><img src="pengers/Swagger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Swenger.png"><img src="pengers/Swenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/TakeoutCoffeeger.png"><img src="pengers/TakeoutCoffeeger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Teacarger.gif"><img src="pengers/Teacarger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Teager.gif"><img src="pengers/Teager.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Teager2.gif"><img src="pengers/Teager2.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Toiletger.gif"><img src="pengers/Toiletger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Tracger.gif"><img src="pengers/Tracger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Transparencenger.png"><img src="pengers/Transparencenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Turkger.gif"><img src="pengers/Turkger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Tuxger.png"><img src="pengers/Tuxger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/TwitchPenger.png"><img src="pengers/TwitchPenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Tympenger.gif"><img src="pengers/Tympenger.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Tympenger.png"><img src="pengers/Tympenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/UFP.gif"><img src="pengers/UFP.gif" /></a></div>
-        
-        <div class="penger"><a href="pengers/Urinalger.png"><img src="pengers/Urinalger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/UVPenger.png"><img src="pengers/UVPenger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Waitinger.png"><img src="pengers/Waitinger.png" /></a></div>
-        
-        <div class="penger"><a href="pengers/Weezger.png"><img src="pengers/Weezger.png" /></a></div>
-        
-    </div>    
+        <div class="penger">
+            <div>18Plusger</div>
+            <img title=":18Plusger:"
+                 alt=":18Plusger:"
+                 src="pengers/18Plusger.png"
+                 onclick="copy_text_and_notify(':18Plusger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>4DPenger</div>
+            <img title=":4DPenger:"
+                 alt=":4DPenger:"
+                 src="pengers/4DPenger.gif"
+                 onclick="copy_text_and_notify(':4DPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>AllThePengers</div>
+            <img title=":AllThePengers:"
+                 alt=":AllThePengers:"
+                 src="pengers/AllThePengers.gif"
+                 onclick="copy_text_and_notify(':AllThePengers:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>animated 69 penger</div>
+            <img title=":animated 69 penger:"
+                 alt=":animated 69 penger:"
+                 src="pengers/animated 69 penger.gif"
+                 onclick="copy_text_and_notify(':animated 69 penger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Baldger</div>
+            <img title=":Baldger:"
+                 alt=":Baldger:"
+                 src="pengers/Baldger.png"
+                 onclick="copy_text_and_notify(':Baldger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Beholdger</div>
+            <img title=":Beholdger:"
+                 alt=":Beholdger:"
+                 src="pengers/Beholdger.gif"
+                 onclick="copy_text_and_notify(':Beholdger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Blenger</div>
+            <img title=":Blenger:"
+                 alt=":Blenger:"
+                 src="pengers/Blenger.png"
+                 onclick="copy_text_and_notify(':Blenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Capger</div>
+            <img title=":Capger:"
+                 alt=":Capger:"
+                 src="pengers/Capger.png"
+                 onclick="copy_text_and_notify(':Capger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>CapgerSaysTransRights</div>
+            <img title=":CapgerSaysTransRights:"
+                 alt=":CapgerSaysTransRights:"
+                 src="pengers/CapgerSaysTransRights.png"
+                 onclick="copy_text_and_notify(':CapgerSaysTransRights:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>CephonPenger</div>
+            <img title=":CephonPenger:"
+                 alt=":CephonPenger:"
+                 src="pengers/CephonPenger.png"
+                 onclick="copy_text_and_notify(':CephonPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Clipenger</div>
+            <img title=":Clipenger:"
+                 alt=":Clipenger:"
+                 src="pengers/Clipenger.png"
+                 onclick="copy_text_and_notify(':Clipenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Clownger</div>
+            <img title=":Clownger:"
+                 alt=":Clownger:"
+                 src="pengers/Clownger.png"
+                 onclick="copy_text_and_notify(':Clownger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Coffeeger</div>
+            <img title=":Coffeeger:"
+                 alt=":Coffeeger:"
+                 src="pengers/Coffeeger.png"
+                 onclick="copy_text_and_notify(':Coffeeger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Colorger</div>
+            <img title=":Colorger:"
+                 alt=":Colorger:"
+                 src="pengers/Colorger.gif"
+                 onclick="copy_text_and_notify(':Colorger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Cookger</div>
+            <img title=":Cookger:"
+                 alt=":Cookger:"
+                 src="pengers/Cookger.png"
+                 onclick="copy_text_and_notify(':Cookger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Criminalger</div>
+            <img title=":Criminalger:"
+                 alt=":Criminalger:"
+                 src="pengers/Criminalger.png"
+                 onclick="copy_text_and_notify(':Criminalger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>CyberPenger</div>
+            <img title=":CyberPenger:"
+                 alt=":CyberPenger:"
+                 src="pengers/CyberPenger.png"
+                 onclick="copy_text_and_notify(':CyberPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Deadger</div>
+            <img title=":Deadger:"
+                 alt=":Deadger:"
+                 src="pengers/Deadger.png"
+                 onclick="copy_text_and_notify(':Deadger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Demureger</div>
+            <img title=":Demureger:"
+                 alt=":Demureger:"
+                 src="pengers/Demureger.png"
+                 onclick="copy_text_and_notify(':Demureger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Disger</div>
+            <img title=":Disger:"
+                 alt=":Disger:"
+                 src="pengers/Disger.png"
+                 onclick="copy_text_and_notify(':Disger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>DoctorPenger</div>
+            <img title=":DoctorPenger:"
+                 alt=":DoctorPenger:"
+                 src="pengers/DoctorPenger.png"
+                 onclick="copy_text_and_notify(':DoctorPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Doomger</div>
+            <img title=":Doomger:"
+                 alt=":Doomger:"
+                 src="pengers/Doomger.png"
+                 onclick="copy_text_and_notify(':Doomger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Factoryger</div>
+            <img title=":Factoryger:"
+                 alt=":Factoryger:"
+                 src="pengers/Factoryger.png"
+                 onclick="copy_text_and_notify(':Factoryger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Fatger</div>
+            <img title=":Fatger:"
+                 alt=":Fatger:"
+                 src="pengers/Fatger.png"
+                 onclick="copy_text_and_notify(':Fatger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Faxger</div>
+            <img title=":Faxger:"
+                 alt=":Faxger:"
+                 src="pengers/Faxger.png"
+                 onclick="copy_text_and_notify(':Faxger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Fishger</div>
+            <img title=":Fishger:"
+                 alt=":Fishger:"
+                 src="pengers/Fishger.gif"
+                 onclick="copy_text_and_notify(':Fishger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Flashbang</div>
+            <img title=":Flashbang:"
+                 alt=":Flashbang:"
+                 src="pengers/Flashbang.gif"
+                 onclick="copy_text_and_notify(':Flashbang:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>FullCookger</div>
+            <img title=":FullCookger:"
+                 alt=":FullCookger:"
+                 src="pengers/FullCookger.png"
+                 onclick="copy_text_and_notify(':FullCookger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Geniusger</div>
+            <img title=":Geniusger:"
+                 alt=":Geniusger:"
+                 src="pengers/Geniusger.png"
+                 onclick="copy_text_and_notify(':Geniusger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Ghostyger</div>
+            <img title=":Ghostyger:"
+                 alt=":Ghostyger:"
+                 src="pengers/Ghostyger.png"
+                 onclick="copy_text_and_notify(':Ghostyger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>GNUPenger</div>
+            <img title=":GNUPenger:"
+                 alt=":GNUPenger:"
+                 src="pengers/GNUPenger.png"
+                 onclick="copy_text_and_notify(':GNUPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Gonger</div>
+            <img title=":Gonger:"
+                 alt=":Gonger:"
+                 src="pengers/Gonger.png"
+                 onclick="copy_text_and_notify(':Gonger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Gopnikger</div>
+            <img title=":Gopnikger:"
+                 alt=":Gopnikger:"
+                 src="pengers/Gopnikger.png"
+                 onclick="copy_text_and_notify(':Gopnikger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Grubenger</div>
+            <img title=":Grubenger:"
+                 alt=":Grubenger:"
+                 src="pengers/Grubenger.png"
+                 onclick="copy_text_and_notify(':Grubenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Guitarger</div>
+            <img title=":Guitarger:"
+                 alt=":Guitarger:"
+                 src="pengers/Guitarger.gif"
+                 onclick="copy_text_and_notify(':Guitarger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>HDPenger</div>
+            <img title=":HDPenger:"
+                 alt=":HDPenger:"
+                 src="pengers/HDPenger.png"
+                 onclick="copy_text_and_notify(':HDPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>HolyCPenger</div>
+            <img title=":HolyCPenger:"
+                 alt=":HolyCPenger:"
+                 src="pengers/HolyCPenger.png"
+                 onclick="copy_text_and_notify(':HolyCPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Holyger</div>
+            <img title=":Holyger:"
+                 alt=":Holyger:"
+                 src="pengers/Holyger.png"
+                 onclick="copy_text_and_notify(':Holyger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Hoodger</div>
+            <img title=":Hoodger:"
+                 alt=":Hoodger:"
+                 src="pengers/Hoodger.png"
+                 onclick="copy_text_and_notify(':Hoodger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Howdyger</div>
+            <img title=":Howdyger:"
+                 alt=":Howdyger:"
+                 src="pengers/Howdyger.png"
+                 onclick="copy_text_and_notify(':Howdyger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Jetger</div>
+            <img title=":Jetger:"
+                 alt=":Jetger:"
+                 src="pengers/Jetger.gif"
+                 onclick="copy_text_and_notify(':Jetger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Jonkger</div>
+            <img title=":Jonkger:"
+                 alt=":Jonkger:"
+                 src="pengers/Jonkger.png"
+                 onclick="copy_text_and_notify(':Jonkger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>JPenger</div>
+            <img title=":JPenger:"
+                 alt=":JPenger:"
+                 src="pengers/JPenger.png"
+                 onclick="copy_text_and_notify(':JPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Kidger</div>
+            <img title=":Kidger:"
+                 alt=":Kidger:"
+                 src="pengers/Kidger.png"
+                 onclick="copy_text_and_notify(':Kidger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Knightger</div>
+            <img title=":Knightger:"
+                 alt=":Knightger:"
+                 src="pengers/Knightger.png"
+                 onclick="copy_text_and_notify(':Knightger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Laptopger</div>
+            <img title=":Laptopger:"
+                 alt=":Laptopger:"
+                 src="pengers/Laptopger.png"
+                 onclick="copy_text_and_notify(':Laptopger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Macger</div>
+            <img title=":Macger:"
+                 alt=":Macger:"
+                 src="pengers/Macger.png"
+                 onclick="copy_text_and_notify(':Macger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Madger</div>
+            <img title=":Madger:"
+                 alt=":Madger:"
+                 src="pengers/Madger.png"
+                 onclick="copy_text_and_notify(':Madger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Malger</div>
+            <img title=":Malger:"
+                 alt=":Malger:"
+                 src="pengers/Malger.png"
+                 onclick="copy_text_and_notify(':Malger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Michaelger</div>
+            <img title=":Michaelger:"
+                 alt=":Michaelger:"
+                 src="pengers/Michaelger.png"
+                 onclick="copy_text_and_notify(':Michaelger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Mineger</div>
+            <img title=":Mineger:"
+                 alt=":Mineger:"
+                 src="pengers/Mineger.png"
+                 onclick="copy_text_and_notify(':Mineger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Momger</div>
+            <img title=":Momger:"
+                 alt=":Momger:"
+                 src="pengers/Momger.png"
+                 onclick="copy_text_and_notify(':Momger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Moustacheger</div>
+            <img title=":Moustacheger:"
+                 alt=":Moustacheger:"
+                 src="pengers/Moustacheger.png"
+                 onclick="copy_text_and_notify(':Moustacheger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Nerdger</div>
+            <img title=":Nerdger:"
+                 alt=":Nerdger:"
+                 src="pengers/Nerdger.png"
+                 onclick="copy_text_and_notify(':Nerdger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>NinjaPenger</div>
+            <img title=":NinjaPenger:"
+                 alt=":NinjaPenger:"
+                 src="pengers/NinjaPenger.png"
+                 onclick="copy_text_and_notify(':NinjaPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>NuclearPenger</div>
+            <img title=":NuclearPenger:"
+                 alt=":NuclearPenger:"
+                 src="pengers/NuclearPenger.gif"
+                 onclick="copy_text_and_notify(':NuclearPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>P</div>
+            <img title=":P:"
+                 alt=":P:"
+                 src="pengers/P.png"
+                 onclick="copy_text_and_notify(':P:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Paintger</div>
+            <img title=":Paintger:"
+                 alt=":Paintger:"
+                 src="pengers/Paintger.png"
+                 onclick="copy_text_and_notify(':Paintger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Partyger</div>
+            <img title=":Partyger:"
+                 alt=":Partyger:"
+                 src="pengers/Partyger.gif"
+                 onclick="copy_text_and_notify(':Partyger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Partyger</div>
+            <img title=":Partyger:"
+                 alt=":Partyger:"
+                 src="pengers/Partyger.png"
+                 onclick="copy_text_and_notify(':Partyger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PBJPenger</div>
+            <img title=":PBJPenger:"
+                 alt=":PBJPenger:"
+                 src="pengers/PBJPenger.gif"
+                 onclick="copy_text_and_notify(':PBJPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Pe</div>
+            <img title=":Pe:"
+                 alt=":Pe:"
+                 src="pengers/Pe.png"
+                 onclick="copy_text_and_notify(':Pe:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Peng</div>
+            <img title=":Peng:"
+                 alt=":Peng:"
+                 src="pengers/Peng.png"
+                 onclick="copy_text_and_notify(':Peng:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Pengachu</div>
+            <img title=":Pengachu:"
+                 alt=":Pengachu:"
+                 src="pengers/Pengachu.png"
+                 onclick="copy_text_and_notify(':Pengachu:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Penganger</div>
+            <img title=":Penganger:"
+                 alt=":Penganger:"
+                 src="pengers/Penganger.png"
+                 onclick="copy_text_and_notify(':Penganger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Pengcoder</div>
+            <img title=":Pengcoder:"
+                 alt=":Pengcoder:"
+                 src="pengers/Pengcoder.png"
+                 onclick="copy_text_and_notify(':Pengcoder:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Penger</div>
+            <img title=":Penger:"
+                 alt=":Penger:"
+                 src="pengers/Penger.png"
+                 onclick="copy_text_and_notify(':Penger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>penger_dance</div>
+            <img title=":penger_dance:"
+                 alt=":penger_dance:"
+                 src="pengers/penger_dance.gif"
+                 onclick="copy_text_and_notify(':penger_dance:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>penger_hallway</div>
+            <img title=":penger_hallway:"
+                 alt=":penger_hallway:"
+                 src="pengers/penger_hallway.gif"
+                 onclick="copy_text_and_notify(':penger_hallway:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerAmaze</div>
+            <img title=":PengerAmaze:"
+                 alt=":PengerAmaze:"
+                 src="pengers/PengerAmaze.gif"
+                 onclick="copy_text_and_notify(':PengerAmaze:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerAndSon</div>
+            <img title=":PengerAndSon:"
+                 alt=":PengerAndSon:"
+                 src="pengers/PengerAndSon.png"
+                 onclick="copy_text_and_notify(':PengerAndSon:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Pengerberry</div>
+            <img title=":Pengerberry:"
+                 alt=":Pengerberry:"
+                 src="pengers/Pengerberry.png"
+                 onclick="copy_text_and_notify(':Pengerberry:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerCoin</div>
+            <img title=":PengerCoin:"
+                 alt=":PengerCoin:"
+                 src="pengers/PengerCoin.gif"
+                 onclick="copy_text_and_notify(':PengerCoin:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerCoin</div>
+            <img title=":PengerCoin:"
+                 alt=":PengerCoin:"
+                 src="pengers/PengerCoin.png"
+                 onclick="copy_text_and_notify(':PengerCoin:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerFront</div>
+            <img title=":PengerFront:"
+                 alt=":PengerFront:"
+                 src="pengers/PengerFront.png"
+                 onclick="copy_text_and_notify(':PengerFront:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerGiga</div>
+            <img title=":PengerGiga:"
+                 alt=":PengerGiga:"
+                 src="pengers/PengerGiga.png"
+                 onclick="copy_text_and_notify(':PengerGiga:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerH</div>
+            <img title=":PengerH:"
+                 alt=":PengerH:"
+                 src="pengers/PengerH.png"
+                 onclick="copy_text_and_notify(':PengerH:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerHeart</div>
+            <img title=":PengerHeart:"
+                 alt=":PengerHeart:"
+                 src="pengers/PengerHeart.png"
+                 onclick="copy_text_and_notify(':PengerHeart:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerHug</div>
+            <img title=":PengerHug:"
+                 alt=":PengerHug:"
+                 src="pengers/PengerHug.png"
+                 onclick="copy_text_and_notify(':PengerHug:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerNote</div>
+            <img title=":PengerNote:"
+                 alt=":PengerNote:"
+                 src="pengers/PengerNote.png"
+                 onclick="copy_text_and_notify(':PengerNote:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerNumberOne</div>
+            <img title=":PengerNumberOne:"
+                 alt=":PengerNumberOne:"
+                 src="pengers/PengerNumberOne.png"
+                 onclick="copy_text_and_notify(':PengerNumberOne:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerSeller</div>
+            <img title=":PengerSeller:"
+                 alt=":PengerSeller:"
+                 src="pengers/PengerSeller.png"
+                 onclick="copy_text_and_notify(':PengerSeller:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerSilverfoot</div>
+            <img title=":PengerSilverfoot:"
+                 alt=":PengerSilverfoot:"
+                 src="pengers/PengerSilverfoot.png"
+                 onclick="copy_text_and_notify(':PengerSilverfoot:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerSmokingAFatDart</div>
+            <img title=":PengerSmokingAFatDart:"
+                 alt=":PengerSmokingAFatDart:"
+                 src="pengers/PengerSmokingAFatDart.gif"
+                 onclick="copy_text_and_notify(':PengerSmokingAFatDart:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerStatue</div>
+            <img title=":PengerStatue:"
+                 alt=":PengerStatue:"
+                 src="pengers/PengerStatue.png"
+                 onclick="copy_text_and_notify(':PengerStatue:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerStream</div>
+            <img title=":PengerStream:"
+                 alt=":PengerStream:"
+                 src="pengers/PengerStream.png"
+                 onclick="copy_text_and_notify(':PengerStream:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerSwag</div>
+            <img title=":PengerSwag:"
+                 alt=":PengerSwag:"
+                 src="pengers/PengerSwag.gif"
+                 onclick="copy_text_and_notify(':PengerSwag:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengerThumbsUp</div>
+            <img title=":PengerThumbsUp:"
+                 alt=":PengerThumbsUp:"
+                 src="pengers/PengerThumbsUp.png"
+                 onclick="copy_text_and_notify(':PengerThumbsUp:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>penginAround</div>
+            <img title=":penginAround:"
+                 alt=":penginAround:"
+                 src="pengers/penginAround.gif"
+                 onclick="copy_text_and_notify(':penginAround:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PengKisser</div>
+            <img title=":PengKisser:"
+                 alt=":PengKisser:"
+                 src="pengers/PengKisser.png"
+                 onclick="copy_text_and_notify(':PengKisser:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Penglup</div>
+            <img title=":Penglup:"
+                 alt=":Penglup:"
+                 src="pengers/Penglup.png"
+                 onclick="copy_text_and_notify(':Penglup:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Pinker</div>
+            <img title=":Pinker:"
+                 alt=":Pinker:"
+                 src="pengers/Pinker.png"
+                 onclick="copy_text_and_notify(':Pinker:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PlanetPenger</div>
+            <img title=":PlanetPenger:"
+                 alt=":PlanetPenger:"
+                 src="pengers/PlanetPenger.gif"
+                 onclick="copy_text_and_notify(':PlanetPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Policeger</div>
+            <img title=":Policeger:"
+                 alt=":Policeger:"
+                 src="pengers/Policeger.png"
+                 onclick="copy_text_and_notify(':Policeger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PongarBarbarian</div>
+            <img title=":PongarBarbarian:"
+                 alt=":PongarBarbarian:"
+                 src="pengers/PongarBarbarian.png"
+                 onclick="copy_text_and_notify(':PongarBarbarian:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PongarTheBarbarian</div>
+            <img title=":PongarTheBarbarian:"
+                 alt=":PongarTheBarbarian:"
+                 src="pengers/PongarTheBarbarian.png"
+                 onclick="copy_text_and_notify(':PongarTheBarbarian:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Ponger</div>
+            <img title=":Ponger:"
+                 alt=":Ponger:"
+                 src="pengers/Ponger.png"
+                 onclick="copy_text_and_notify(':Ponger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PongerMagic</div>
+            <img title=":PongerMagic:"
+                 alt=":PongerMagic:"
+                 src="pengers/PongerMagic.gif"
+                 onclick="copy_text_and_notify(':PongerMagic:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PongerWizard</div>
+            <img title=":PongerWizard:"
+                 alt=":PongerWizard:"
+                 src="pengers/PongerWizard.png"
+                 onclick="copy_text_and_notify(':PongerWizard:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>PowerPenger</div>
+            <img title=":PowerPenger:"
+                 alt=":PowerPenger:"
+                 src="pengers/PowerPenger.png"
+                 onclick="copy_text_and_notify(':PowerPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Presentger</div>
+            <img title=":Presentger:"
+                 alt=":Presentger:"
+                 src="pengers/Presentger.png"
+                 onclick="copy_text_and_notify(':Presentger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Queenger</div>
+            <img title=":Queenger:"
+                 alt=":Queenger:"
+                 src="pengers/Queenger.png"
+                 onclick="copy_text_and_notify(':Queenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Redger</div>
+            <img title=":Redger:"
+                 alt=":Redger:"
+                 src="pengers/Redger.png"
+                 onclick="copy_text_and_notify(':Redger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Richger</div>
+            <img title=":Richger:"
+                 alt=":Richger:"
+                 src="pengers/Richger.png"
+                 onclick="copy_text_and_notify(':Richger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Rockger</div>
+            <img title=":Rockger:"
+                 alt=":Rockger:"
+                 src="pengers/Rockger.gif"
+                 onclick="copy_text_and_notify(':Rockger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Rockhopger</div>
+            <img title=":Rockhopger:"
+                 alt=":Rockhopger:"
+                 src="pengers/Rockhopger.png"
+                 onclick="copy_text_and_notify(':Rockhopger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Rusger</div>
+            <img title=":Rusger:"
+                 alt=":Rusger:"
+                 src="pengers/Rusger.gif"
+                 onclick="copy_text_and_notify(':Rusger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>SailorMoonger</div>
+            <img title=":SailorMoonger:"
+                 alt=":SailorMoonger:"
+                 src="pengers/SailorMoonger.png"
+                 onclick="copy_text_and_notify(':SailorMoonger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Saiyanger</div>
+            <img title=":Saiyanger:"
+                 alt=":Saiyanger:"
+                 src="pengers/Saiyanger.gif"
+                 onclick="copy_text_and_notify(':Saiyanger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Samiger</div>
+            <img title=":Samiger:"
+                 alt=":Samiger:"
+                 src="pengers/Samiger.png"
+                 onclick="copy_text_and_notify(':Samiger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>ScientistPenger</div>
+            <img title=":ScientistPenger:"
+                 alt=":ScientistPenger:"
+                 src="pengers/ScientistPenger.png"
+                 onclick="copy_text_and_notify(':ScientistPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>ScientistPengerA</div>
+            <img title=":ScientistPengerA:"
+                 alt=":ScientistPengerA:"
+                 src="pengers/ScientistPengerA.gif"
+                 onclick="copy_text_and_notify(':ScientistPengerA:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>ScientistPengerFlask</div>
+            <img title=":ScientistPengerFlask:"
+                 alt=":ScientistPengerFlask:"
+                 src="pengers/ScientistPengerFlask.png"
+                 onclick="copy_text_and_notify(':ScientistPengerFlask:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Sleepger</div>
+            <img title=":Sleepger:"
+                 alt=":Sleepger:"
+                 src="pengers/Sleepger.png"
+                 onclick="copy_text_and_notify(':Sleepger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>SmoothPenger</div>
+            <img title=":SmoothPenger:"
+                 alt=":SmoothPenger:"
+                 src="pengers/SmoothPenger.png"
+                 onclick="copy_text_and_notify(':SmoothPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>SmoothPengernal</div>
+            <img title=":SmoothPengernal:"
+                 alt=":SmoothPengernal:"
+                 src="pengers/SmoothPengernal.png"
+                 onclick="copy_text_and_notify(':SmoothPengernal:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Soupger</div>
+            <img title=":Soupger:"
+                 alt=":Soupger:"
+                 src="pengers/Soupger.png"
+                 onclick="copy_text_and_notify(':Soupger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Spainger</div>
+            <img title=":Spainger:"
+                 alt=":Spainger:"
+                 src="pengers/Spainger.png"
+                 onclick="copy_text_and_notify(':Spainger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Spillger</div>
+            <img title=":Spillger:"
+                 alt=":Spillger:"
+                 src="pengers/Spillger.png"
+                 onclick="copy_text_and_notify(':Spillger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Sponger</div>
+            <img title=":Sponger:"
+                 alt=":Sponger:"
+                 src="pengers/Sponger.png"
+                 onclick="copy_text_and_notify(':Sponger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Startleger</div>
+            <img title=":Startleger:"
+                 alt=":Startleger:"
+                 src="pengers/Startleger.png"
+                 onclick="copy_text_and_notify(':Startleger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Stronger</div>
+            <img title=":Stronger:"
+                 alt=":Stronger:"
+                 src="pengers/Stronger.png"
+                 onclick="copy_text_and_notify(':Stronger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Suitger</div>
+            <img title=":Suitger:"
+                 alt=":Suitger:"
+                 src="pengers/Suitger.png"
+                 onclick="copy_text_and_notify(':Suitger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>SuperPenger</div>
+            <img title=":SuperPenger:"
+                 alt=":SuperPenger:"
+                 src="pengers/SuperPenger.png"
+                 onclick="copy_text_and_notify(':SuperPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Surfger</div>
+            <img title=":Surfger:"
+                 alt=":Surfger:"
+                 src="pengers/Surfger.png"
+                 onclick="copy_text_and_notify(':Surfger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Susger</div>
+            <img title=":Susger:"
+                 alt=":Susger:"
+                 src="pengers/Susger.png"
+                 onclick="copy_text_and_notify(':Susger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Swagger</div>
+            <img title=":Swagger:"
+                 alt=":Swagger:"
+                 src="pengers/Swagger.png"
+                 onclick="copy_text_and_notify(':Swagger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Swenger</div>
+            <img title=":Swenger:"
+                 alt=":Swenger:"
+                 src="pengers/Swenger.png"
+                 onclick="copy_text_and_notify(':Swenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>TakeoutCoffeeger</div>
+            <img title=":TakeoutCoffeeger:"
+                 alt=":TakeoutCoffeeger:"
+                 src="pengers/TakeoutCoffeeger.png"
+                 onclick="copy_text_and_notify(':TakeoutCoffeeger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Teacarger</div>
+            <img title=":Teacarger:"
+                 alt=":Teacarger:"
+                 src="pengers/Teacarger.gif"
+                 onclick="copy_text_and_notify(':Teacarger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Teager</div>
+            <img title=":Teager:"
+                 alt=":Teager:"
+                 src="pengers/Teager.gif"
+                 onclick="copy_text_and_notify(':Teager:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Teager2</div>
+            <img title=":Teager2:"
+                 alt=":Teager2:"
+                 src="pengers/Teager2.gif"
+                 onclick="copy_text_and_notify(':Teager2:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Toiletger</div>
+            <img title=":Toiletger:"
+                 alt=":Toiletger:"
+                 src="pengers/Toiletger.gif"
+                 onclick="copy_text_and_notify(':Toiletger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Tracger</div>
+            <img title=":Tracger:"
+                 alt=":Tracger:"
+                 src="pengers/Tracger.gif"
+                 onclick="copy_text_and_notify(':Tracger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Transparencenger</div>
+            <img title=":Transparencenger:"
+                 alt=":Transparencenger:"
+                 src="pengers/Transparencenger.png"
+                 onclick="copy_text_and_notify(':Transparencenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Turkger</div>
+            <img title=":Turkger:"
+                 alt=":Turkger:"
+                 src="pengers/Turkger.gif"
+                 onclick="copy_text_and_notify(':Turkger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Tuxger</div>
+            <img title=":Tuxger:"
+                 alt=":Tuxger:"
+                 src="pengers/Tuxger.png"
+                 onclick="copy_text_and_notify(':Tuxger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>TwitchPenger</div>
+            <img title=":TwitchPenger:"
+                 alt=":TwitchPenger:"
+                 src="pengers/TwitchPenger.png"
+                 onclick="copy_text_and_notify(':TwitchPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Tympenger</div>
+            <img title=":Tympenger:"
+                 alt=":Tympenger:"
+                 src="pengers/Tympenger.gif"
+                 onclick="copy_text_and_notify(':Tympenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Tympenger</div>
+            <img title=":Tympenger:"
+                 alt=":Tympenger:"
+                 src="pengers/Tympenger.png"
+                 onclick="copy_text_and_notify(':Tympenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>UFP</div>
+            <img title=":UFP:"
+                 alt=":UFP:"
+                 src="pengers/UFP.gif"
+                 onclick="copy_text_and_notify(':UFP:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Urinalger</div>
+            <img title=":Urinalger:"
+                 alt=":Urinalger:"
+                 src="pengers/Urinalger.png"
+                 onclick="copy_text_and_notify(':Urinalger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>UVPenger</div>
+            <img title=":UVPenger:"
+                 alt=":UVPenger:"
+                 src="pengers/UVPenger.png"
+                 onclick="copy_text_and_notify(':UVPenger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Waitinger</div>
+            <img title=":Waitinger:"
+                 alt=":Waitinger:"
+                 src="pengers/Waitinger.png"
+                 onclick="copy_text_and_notify(':Waitinger:');"
+                 />
+        </div>
+        
+        <div class="penger">
+            <div>Weezger</div>
+            <img title=":Weezger:"
+                 alt=":Weezger:"
+                 src="pengers/Weezger.png"
+                 onclick="copy_text_and_notify(':Weezger:');"
+                 />
+        </div>
+        
+    </div>
+
+    <div id="notification"></div>
 </body>
 </html>

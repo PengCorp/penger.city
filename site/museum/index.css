@@ -10,7 +10,7 @@ body {
 .pengers {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: center stretch;
     flex-wrap: wrap;
     gap: 16px;
 }
@@ -19,7 +19,40 @@ body {
     width: 64px;
 }
 
-.penger>a>img {
+.penger>img {
     width: 64px;
     image-rendering: pixelated;
+}
+
+.penger>div {
+    text-align: center;
+    font-size: 9px;
+    color: #ffffffee;
+    margin-bottom: 1em;
+}
+
+.penger:hover {
+    outline: solid 3px #ffffffee;
+    border-radius: 5px;
+    cursor: url("/cursor2.png"), auto;
+}
+
+#notification {
+    outline: solid 3px #ffffffee;
+    border-radius: 5px;
+    background-color: #ffaaaaff;
+    padding: 10px;
+    font-size: 32px;
+    color: #ffffffee;
+    position: fixed;
+    z-index: 1000;
+    right: 3em;
+    opacity: 0.8;
+    display: none;
+}
+
+.tutorial {
+    font-size: 18px;
+    color: #ffffffee;
+    margin-bottom: 2em;
 }

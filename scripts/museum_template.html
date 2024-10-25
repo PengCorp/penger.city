@@ -13,10 +13,28 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
+    <script>
+    window.notification_timer = 4001.0;
+
+    function copy_text_and_notify(text) {
+        navigator.clipboard.writeText(text);
+        window.notification_timer = 0;
+        notification.innerHTML = text + " has been copied!";
+    }
+
+    setInterval(function(){
+        if(window.notification_timer > 4000) {
+            notification.style.display = "none";
+        } else {
+            notification.style.display = "block";
+            window.notification_timer += 200;
+        }
+    }, 200);
+    </script>
 </head>
 <body>
     <h1>Museum of Penger</h1>
-    
+
     <div id="homelink"><a href="/">&lt;&lt; Back to Home</a></div>
 
     <p>This page contains a curated set of best pixel-perfect Pengers.</p>
@@ -27,10 +45,21 @@
 
     <p>All the Pengers </p>
 
+    <i class="tutorial">Click a penger to copy their discord emoji code!</i>
+
     <div class="pengers">
         {% for image in images|sort(attribute='original') %}
-        <div class="penger"><a href="{{ image['original'] }}"><img src="{{ image['resized'] if image['resized'] else image['original'] }}" /></a></div>
+        <div class="penger">
+            <div>{{ image['emoji_name'][1:-1] }}</div>
+            <img title="{{ image['emoji_name'] }}"
+                 alt="{{ image['emoji_name'] }}"
+                 src="{{ image['original'] }}"
+                 onclick="copy_text_and_notify('{{ image['emoji_name'] }}');"
+                 />
+        </div>
         {% endfor %}
-    </div>    
+    </div>
+
+    <div id="notification"></div>
 </body>
 </html>
