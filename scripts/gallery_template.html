@@ -48,18 +48,18 @@
         <h2>Museum</h2>
         <div class="mpengers">
             <div class="mpenger"><a href="../museum/pengers/Penger.png"><img src="../museum/pengers/Penger.png" /></a></div>
-            {% for museum_image in museum_images %}
+            {% for museum_image in museum_images|sort(attribute='original') %}
             <div class="mpenger"><a href="{{ museum_image['original'] }}"><img src="{{ museum_image['resized'] if museum_image['resized'] else museum_image['original'] }}" /></a></div>
             {% endfor %}
         </div>
     </div>
-    {% for dir, images in images_with_dirs.items() %}
+    {% for dir, images in images_with_dirs|dictsort %}
     <div class="directory">
         {% if dir != "." %}
             <h2>{{ dir }}</h2>
         {% endif %}
         <div class="gallery">
-            {% for image in images %}
+            {% for image in images|sort %}
             <div>
                 <img src="{{ image }}" alt="Image">
             </div>

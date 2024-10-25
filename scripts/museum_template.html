@@ -28,7 +28,7 @@
     <p>All the Pengers </p>
 
     <div class="pengers">
-        {% for image in images %}
+        {% for image in images|sort(attribute='original') %}
         <div class="penger"><a href="{{ image['original'] }}"><img src="{{ image['resized'] if image['resized'] else image['original'] }}" /></a></div>
         {% endfor %}
     </div>    
