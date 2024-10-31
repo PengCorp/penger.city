@@ -30,7 +30,7 @@
             object-fit: cover;
             border: 1px solid #ccc;
         }
-        
+
         .directory {
             margin-bottom: 40px;
             text-align: center;
@@ -59,9 +59,9 @@
             <h2>{{ dir }}</h2>
         {% endif %}
         <div class="gallery">
-            {% for image in images|sort %}
+            {% for image in images|sort(attribute='path') %}
             <div>
-                <img src="{{ image }}" alt="Image">
+                <img src="{{ image.path }}" width="{{ image.size.width }}" height="{{ image.size.height }}" alt="Image">
             </div>
             {% endfor %}
         </div>

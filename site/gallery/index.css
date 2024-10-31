@@ -287,3 +287,31 @@ h1 {
   width: 64px;
   image-rendering: pixelated;
 }
+
+.gallery {
+    display: grid;
+    grid-auto-flow: row dense;
+    gap: 5px;
+    padding: 15px;
+    margin-inline: 2em;
+    border-radius: 15px;
+    border: dotted 5px #ffffffaa;
+    /* background-color: #ff5555aa; */
+
+    background: rgb(212,0,158);
+    background: linear-gradient(138deg, rgba(212,0,158,0.16555533439490444) 0%, rgba(238,39,142,0.17510947452229297) 68%, rgba(162,2,244,0.23880374203821653) 100%);
+
+    box-shadow: 5px 5px 5px #ff555577;
+}
+
+.gallery>div>img {
+    border: dashed #ffffffaa 3px;
+    background-color: #44777722;
+    box-shadow: 3px 3px 3px #ff555577;
+    padding: 5px;
+}
+
+.gallery>div>img:hover {
+    background-color: #44777733;
+    box-shadow: 9px 9px 9px #ff555577;
+}
