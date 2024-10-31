@@ -290,13 +290,12 @@ h1 {
 
 .gallery {
     display: grid;
-    grid-auto-flow: row dense;
+    grid-auto-flow: dense;
     gap: 5px;
     padding: 15px;
     margin-inline: 2em;
     border-radius: 15px;
     border: dotted 5px #ffffffaa;
-    /* background-color: #ff5555aa; */
 
     background: rgb(212,0,158);
     background: linear-gradient(138deg, rgba(212,0,158,0.16555533439490444) 0%, rgba(238,39,142,0.17510947452229297) 68%, rgba(162,2,244,0.23880374203821653) 100%);
@@ -309,6 +308,9 @@ h1 {
     background-color: #44777722;
     box-shadow: 3px 3px 3px #ff555577;
     padding: 5px;
+    object-fit: contain;
+    max-width: 30vw;
+    max-height: 30vh;
 }
 
 .gallery>div>img:hover {
