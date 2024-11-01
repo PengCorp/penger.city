@@ -39,9 +39,12 @@
             (begin (display (help-text)) (quit)))
         ((equal? text "rename-emoji")
             (begin
-                (if (not (= (cmd "mv" (string-append "site/museum/pengers/" (car other-args)) (string-append "site/museum/pengers/" (cadr other-args))) 0)) (die "Failed to rename emoji"))
-                (if (not (= (cmd "fossil" "rm" (string-append "site/museum/pengers/" (car other-args))) 0)) (die "Failed to untrack emoji using fossil"))
-                (if (not (= (cmd "fossil" "add" (string-append "site/museum/pengers/" (cadr other-args))) 0)) (die "Failed to track new emoji using fossil"))
+                (if (not (= (cmd "mv" (string-append "site/museum/pengers/" (car other-args))
+                                      (string-append "site/museum/pengers/" (cadr other-args))) 0)) (die "Failed to rename emoji"))
+
+                (if (not (= (cmd "fossil" "rename" (string-append "site/museum/pengers/" (car other-args))
+                                                   (string-append "site/museum/pengers/" (cadr other-args))) 0)) (die "Failed to rename emoji using fossil"))
+
                 (display "Emoji renamed! please do not forget to rebuild the museum with `./build.scm museum`!") (newline)
                 (quit)))
         ((equal? text "all"    )
