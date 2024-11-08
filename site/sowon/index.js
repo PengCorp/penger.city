@@ -91,6 +91,7 @@ offscreenCanvas.height = canvas.height;
 
 const MODE_ASCENDING = 0;
 const MODE_COUNTDOWN = 1;
+const MODE_CLOCK = 2;
 
 // state
 const pen = { x: 0, y: 0 };
@@ -111,9 +112,18 @@ let mode = MODE_ASCENDING;
 /** In ms */
 let displayedTime = 0;
 
-if (queryParams.countdown) {
-  displayedTime = parseInt(queryParams.countdown) * 1000;
+const getCurrentTimeInMiliseconds = () => {
+  const now = new Date();
+  const seconds = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+  return seconds * 1000;
+}
+
+if (Object.keys(queryParams).includes('clock')) {
+  mode = MODE_CLOCK;
+  displayedTime = getCurrentTimeInMiliseconds();
+} else if (queryParams.countdown) {
   mode = MODE_COUNTDOWN;
+  displayedTime = parseInt(queryParams.countdown) * 1000;
 }
 
 const getEffectiveDigitWidth = () =>
@@ -287,6 +297,8 @@ const onLoop = () => {
         } else {
           displayedTime = 0;
         }
+      } else if (mode === MODE_CLOCK) {
+        displayedTime = getCurrentTimeInMiliseconds();
       }
     }
   }
