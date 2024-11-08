@@ -114,8 +114,8 @@ let displayedTime = 0;
 
 const getCurrentTimeInMiliseconds = () => {
   const now = new Date();
-  const seconds = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-  return seconds * 1000;
+  const seconds = now.getHours() * 3600 * 1000 + now.getMinutes() * 60 * 1000 + now.getSeconds() * 1000 + now.getMilliseconds();
+  return seconds;
 }
 
 if (Object.keys(queryParams).includes('clock')) {
