@@ -28,6 +28,24 @@ const {
   useState,
 } = preactHooks;
 
+function parseQueryParams(url) {
+  const params = {};
+  const queryString = url.split('?')[1];
+
+  if (!queryString) return params;
+
+  const pairs = queryString.split('&');
+
+  for (const pair of pairs) {
+    const [key, value] = pair.split('=');
+    params[decodeURIComponent(key)] = decodeURIComponent(value || '');
+  }
+
+  return params;
+}
+
+const queryParams = parseQueryParams(window.location.href);
+
 const CHAR_WIDTH = 150;
 const CHAR_HEIGHT = 190;
 const SPRITE_CHAR_WIDTH = 150;
@@ -71,6 +89,9 @@ const offscreenCtx = offscreenCanvas.getContext("2d");
 offscreenCanvas.width = canvas.width;
 offscreenCanvas.height = canvas.height;
 
+const MODE_ASCENDING = 0;
+const MODE_COUNTDOWN = 1;
+
 // state
 const pen = { x: 0, y: 0 };
 let userScale = 1;
@@ -85,9 +106,15 @@ const fpsdt = {
   lastTime: performance.now(),
 };
 let paused = false;
+let mode = MODE_ASCENDING;
 
 /** In ms */
 let displayedTime = 0;
+
+if (queryParams.countdown) {
+  displayedTime = parseInt(queryParams.countdown) * 1000;
+  mode = MODE_COUNTDOWN;
+}
 
 const getEffectiveDigitWidth = () =>
   Math.floor(CHAR_WIDTH * userScale * fitScale);
@@ -139,7 +166,7 @@ const drawDigitAt = (digitIndex, wiggleIndex) => {
   pen.x += effectiveDigitWidth;
 };
 
-const drawPengerAt = (time) => {
+const drawPengerAt = (time, flipped) => {
   const windowWidth = canvas.width;
   const windowHeight = canvas.height;
 
@@ -159,13 +186,21 @@ const drawPengerAt = (time) => {
 
   offscreenCtx.reset();
 
+  let pengerX = pengerWalkWidth * progress - pengerDrawnWidth;
+
+  if (flipped) {
+    offscreenCtx.scale(-1, 1);
+    pengerX = pengerX + pengerDrawnWidth;
+    pengerX = -pengerX;
+  }
+
   offscreenCtx.drawImage(
     pengerSheet,
     PENGER_WIDTH * frameIndex,
     0,
     PENGER_WIDTH,
     PENGER_HEIGHT,
-    pengerWalkWidth * progress - pengerDrawnWidth,
+    pengerX,
     windowHeight - (PENGER_HEIGHT / PENGER_SCALE),
     PENGER_WIDTH / PENGER_SCALE,
     PENGER_HEIGHT / PENGER_SCALE
@@ -209,7 +244,7 @@ const onLoop = () => {
     ctx.rect(0, 0, canvas.width, canvas.height);
     ctx.fill();
 
-    drawPengerAt(displayedTime);
+    drawPengerAt(displayedTime, mode === MODE_COUNTDOWN);
 
     initialPen();
 
@@ -244,7 +279,15 @@ const onLoop = () => {
     wiggleCooldown -= fpsdt.dt;
 
     if (!paused) {
-      displayedTime += fpsdt.dt;
+      if (mode === MODE_ASCENDING) {
+        displayedTime += fpsdt.dt;
+      } else if (mode === MODE_COUNTDOWN) {
+        if (displayedTime > 1e-6) {
+          displayedTime -= fpsdt.dt;
+        } else {
+          displayedTime = 0;
+        }
+      }
     }
   }
 
