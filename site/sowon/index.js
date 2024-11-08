@@ -46,6 +46,12 @@ const SCALE_FACTOR = 0.15;
 const TARGET_FPS = 60;
 const FRAME_INTERVAL = 1000 / TARGET_FPS;
 
+const PENGER_SCALE = 4;
+const PENGER_STEPS_PER_SECOND = 3;
+const PENGER_FRAMES = 2;
+const PENGER_WIDTH = 256;
+const PENGER_HEIGHT = 256;
+
 // const MAIN_COLOR = "#e44F5C"; // pastel strawberry
 const MAIN_COLOR = "#dcdcdc";
 const PAUSE_COLOR = "#787878";
@@ -54,12 +60,14 @@ let digitColor = MAIN_COLOR;
 
 const digitsSheet = new Image();
 digitsSheet.src = "/sowon/digits.png";
+const pengerSheet = new Image();
+pengerSheet.src = "/sowon/penger_walk_sheet.png";
 
 const canvas = document.getElementById("clock");
 const ctx = canvas.getContext("2d");
 
-const offscreenCanvas = document.createElement('canvas');
-const offscreenCtx = offscreenCanvas.getContext('2d');
+const offscreenCanvas = document.createElement("canvas");
+const offscreenCtx = offscreenCanvas.getContext("2d");
 offscreenCanvas.width = canvas.width;
 offscreenCanvas.height = canvas.height;
 
@@ -76,6 +84,7 @@ const fpsdt = {
   /** In ms */
   lastTime: performance.now(),
 };
+let paused = false;
 
 /** In ms */
 let displayedTime = 0;
@@ -110,14 +119,60 @@ const drawDigitAt = (digitIndex, wiggleIndex) => {
     effectiveDigitHeight
   );
 
-  offscreenCtx.globalCompositeOperation = 'source-in';
-  offscreenCtx.fillStyle = digitColor;
-  offscreenCtx.fillRect(pen.x, pen.y, effectiveDigitWidth, effectiveDigitHeight);
+  offscreenCtx.globalCompositeOperation = "source-in";
+
+  if (paused) {
+    offscreenCtx.fillStyle = PAUSE_COLOR;
+  } else {
+    offscreenCtx.fillStyle = digitColor;
+  }
+
+  offscreenCtx.fillRect(
+    pen.x,
+    pen.y,
+    effectiveDigitWidth,
+    effectiveDigitHeight
+  );
 
   ctx.drawImage(offscreenCanvas, 0, 0);
 
   pen.x += effectiveDigitWidth;
 };
+
+const drawPengerAt = (time) => {
+  const windowWidth = canvas.width;
+  const windowHeight = canvas.height;
+
+  offscreenCtx.reset();
+
+  const sps = PENGER_STEPS_PER_SECOND;
+
+  const step = Math.floor((time / 1000) * sps) % (60 * sps);
+
+  const progress = step / (60 * sps);
+
+  const frameIndex = step % 2;
+
+  const pengerDrawnWidth = PENGER_WIDTH / PENGER_SCALE;
+
+  const pengerWalkWidth = windowWidth + pengerDrawnWidth;
+
+  offscreenCtx.reset();
+
+  offscreenCtx.drawImage(
+    pengerSheet,
+    PENGER_WIDTH * frameIndex,
+    0,
+    PENGER_WIDTH,
+    PENGER_HEIGHT,
+    pengerWalkWidth * progress - pengerDrawnWidth,
+    windowHeight - (PENGER_HEIGHT / PENGER_SCALE),
+    PENGER_WIDTH / PENGER_SCALE,
+    PENGER_HEIGHT / PENGER_SCALE
+  );
+
+  ctx.drawImage(offscreenCanvas, 0, 0);
+}
 
 const initialPen = () => {
   const textAspectRatio = TEXT_WIDTH / TEXT_HEIGHT;
@@ -154,6 +209,8 @@ const onLoop = () => {
     ctx.rect(0, 0, canvas.width, canvas.height);
     ctx.fill();
 
+    drawPengerAt(displayedTime);
+
     initialPen();
 
     const t = displayedTime;
@@ -186,9 +243,40 @@ const onLoop = () => {
     }
     wiggleCooldown -= fpsdt.dt;
 
-    displayedTime += fpsdt.dt;
+    if (!paused) {
+      displayedTime += fpsdt.dt;
+    }
   }
 
   window.requestAnimationFrame(onLoop);
 };
 window.requestAnimationFrame(onLoop);
+
+document.addEventListener('wheel', (event) => {
+  if (event.ctrlKey) {
+    if (event.deltaY < 0) {
+      userScale += SCALE_FACTOR * userScale;
+    } else if (event.deltaY > 0) {
+      userScale -= SCALE_FACTOR * userScale;
+    }
+  }
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.code === "Space") {
+    event.preventDefault();
+    paused = !paused;
+  }
+  if (event.code === "NumpadAdd") {
+    event.preventDefault();
+    userScale += SCALE_FACTOR * userScale;
+  }
+  if (event.code === "NumpadSubtract") {
+    event.preventDefault();
+    userScale -= SCALE_FACTOR * userScale;
+  }
+  if (event.code === "Digit0" || event.code === "Numpad0") {
+    event.preventDefault();
+    userScale = 1;
+  }
+});
