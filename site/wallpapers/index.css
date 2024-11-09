@@ -13,7 +13,7 @@ body {
     padding-top: 0;
 }
 
-.wallpapers a {
+.wallpapers > .wallpaper > a {
     max-width: 512px;
     width: 75%;
     display: flex;
