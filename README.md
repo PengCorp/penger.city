@@ -52,3 +52,5 @@ and all other file globs that you want to exclude from version control. Click **
 ## Pushing
 
 Uploads site files to Neocities. May ask for login that is then remembered.
+
+If you want to ignore a folder when pushing update ./push.sh and specify the folder with `-e`.

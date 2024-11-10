@@ -1,0 +1,12 @@
+Download .umd.min.js bundle from cdnjs and rename it to just module.js, plop it here.
+Then you can load it with require.
+
+If it's just a simple js bundle you can just add it but it will not be loadable with require.js.
+
+Version numbers are listed below because the filenames must match the module names.
+
+"htm": "3.1.1",
+"htm-preact": "3.1.1",
+"preact-hooks": "10.24.3",
+"preact": "10.24.3",
+"require": "2.3.7"

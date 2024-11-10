@@ -1,33 +1,3 @@
-const {
-  Component,
-  Fragment,
-  cloneElement,
-  createContext,
-  createElement,
-  createRef,
-  h,
-  hydrate,
-  isValidElement,
-  options,
-  render,
-  toChildArray,
-} = preact;
-
-const {
-  useCallback,
-  useContext,
-  useDebugValue,
-  useEffect,
-  useErrorBoundary,
-  useId,
-  useImperativeHandle,
-  useLayoutEffect,
-  useMemo,
-  useReducer,
-  useRef,
-  useState,
-} = preactHooks;
-
 function parseQueryParams(url) {
   const params = {};
   const queryString = url.split('?')[1];

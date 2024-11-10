@@ -1,2 +1,2 @@
 pushd site
-neocities push -e .gitignore .
+neocities push -e .gitignore -e porth .
