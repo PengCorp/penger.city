@@ -1,13 +1,15 @@
 requirejs.config({
     baseUrl: '/js',
     paths: {
-        porth: './'
+        porth: '../porth'
     }
 });
 
-requirejs(['preact', 'preact-hooks', 'htm-preact'], function (preact, preactHooks, htmPreact) {
-    const { Fragment } = preact;
-    const { html } = htmPreact;
+requirejs(['preact', 'preact-hooks', 'htm-preact', 'porth/porth'], function (Preact, PreactHooks, HTMPreact, Porth) {
+    const { Fragment } = Preact;
+    const { html } = HTMPreact;
+
+    const engine = new Porth.PorthEngine();
 
     const Input = ({ value, onChange }) => {
         return html`
@@ -24,7 +26,7 @@ requirejs(['preact', 'preact-hooks', 'htm-preact'], function (preact, preactHook
         `;
     }
 
-    const Porth = () => {
+    const PorthApp = () => {
         return html`
             <${Fragment}>
                 <${Input} value="Hello, World!" onChange=${(value) => {
@@ -35,8 +37,8 @@ requirejs(['preact', 'preact-hooks', 'htm-preact'], function (preact, preactHook
         `;
     };
 
-    preact.render(
-        preact.createElement(Porth),
+    Preact.render(
+        Preact.createElement(PorthApp),
         document.getElementById('app')
     );
 });
