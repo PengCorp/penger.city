@@ -1,0 +1,30 @@
+body {
+    background-image: url(/only_cool_penguins_write_c/bg.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    width: 100vw;
+    overflow-x: hidden;
+
+    overflow-y: scroll;
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3em;
+
+    padding-top: 20em;
+    padding-bottom: 20em;
+}
+
+.main {
+    width: 60%;
+    margin: auto;
+
+    border: solid red 1px;
+    color: teal;
+
+    padding: 5em;
+}
