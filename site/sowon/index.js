@@ -80,7 +80,9 @@ let paused = false;
 let mode = MODE_ASCENDING;
 
 /** In ms */
+let initialDisplayedTime = 0;
 let displayedTime = 0;
+let shouldLoop = false;
 
 const getCurrentTimeInMiliseconds = () => {
   const now = new Date();
@@ -93,7 +95,11 @@ if (Object.keys(queryParams).includes('clock')) {
   displayedTime = getCurrentTimeInMiliseconds();
 } else if (queryParams.countdown) {
   mode = MODE_COUNTDOWN;
-  displayedTime = parseInt(queryParams.countdown) * 1000;
+  initialDisplayedTime = parseInt(queryParams.countdown) * 1000
+  displayedTime = displayedTime;
+  if (Object.keys(queryParams).includes('loop')) {
+    shouldLoop = true;
+  }
 }
 
 const getEffectiveDigitWidth = () =>
@@ -265,7 +271,11 @@ const onLoop = () => {
         if (displayedTime > 1e-6) {
           displayedTime -= fpsdt.dt;
         } else {
-          displayedTime = 0;
+          if (shouldLoop) {
+            displayedTime = initialDisplayedTime - 1;
+          } else {
+            displayedTime = 0;
+          }
         }
       } else if (mode === MODE_CLOCK) {
         displayedTime = getCurrentTimeInMiliseconds();
