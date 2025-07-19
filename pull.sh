@@ -1,2 +1,0 @@
-pushd site
-neocities pull

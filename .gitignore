@@ -1,0 +1,14 @@
+# Mac ignore files
+.DS_Store
+
+# Built scm
+/scm
+
+# Python venv
+/venv/
+
+# Environment files
+.env
+
+# PHP vendor files
+/vendor/

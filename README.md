@@ -38,19 +38,17 @@ SHOULD theoretically maybe work on windows??? (i tried)
 scm -1 build.scm help
 ```
 
-### Step 4: Set up ignores
+# Credits
 
-Run `fossil ui`. Navigate to Admin > Settings (`http://localhost:8080/setup_settings`). In `ignore-glob` add
+This couldn't have happened without contributions from:
 
-```
-venv
-scm
-```
+- Boons
+- Cephon Altera
+- Dimitri Eugensson
+- Jack
+- Laur
+- Strawberry
+- Tymscar
+- ... and all other contributors of original Pengers!
 
-and all other file globs that you want to exclude from version control. Click **Apply Changes** to save.
-
-## Pushing
-
-Uploads site files to Neocities. May ask for login that is then remembered.
-
-If you want to ignore a folder when pushing update ./push.sh and specify the folder with `-e`.
+Thank you 🍓
