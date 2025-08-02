@@ -5,7 +5,7 @@ import glob
 
 # Function to find all image files in a directory (recursively)
 def find_images_with_dirs(directory):
-    supported_extensions = ('.png', '.jpg', '.jpeg', '.gif')
+    supported_extensions = ('.png', '.jpg', '.jpeg', '.gif', '.webp')
     images_with_dirs = {}
 
     for root, _, files in os.walk(directory):

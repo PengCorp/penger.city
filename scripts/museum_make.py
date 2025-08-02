@@ -5,7 +5,7 @@ from jinja2 import Environment, FileSystemLoader
 def collect_images(directory):
     remove_path = directory + '/'
     replace_path_with = 'pengers/'
-    image_extensions = ['*.png', '*.gif']
+    image_extensions = ['*.png', '*.gif', '*.webp']
 
     image_files = []
 
