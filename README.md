@@ -43,6 +43,7 @@ scm -1 build.scm help
 This couldn't have happened without contributions from:
 
 - Boons
+- Carlton Fade
 - Cephon Altera
 - Dimitri Eugensson
 - Jack
