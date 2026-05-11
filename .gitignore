@@ -6,6 +6,7 @@
 
 # Python venv
 /venv/
+/.venv
 
 # Environment files
 .env
